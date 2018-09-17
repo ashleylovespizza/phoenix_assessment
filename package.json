@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ashleylovespizza/phoenix_assessment#readme",
   "dependencies": {
+    "airtable": "^0.5.6",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "path": "^0.12.7"
   }
