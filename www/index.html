@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<title>NWH Peace of Mind Assessment</title>
+
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		
+
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- 
+		<script src="cordova.js"></script> -->
+
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/underscore.min.js"></script>
+		<script type="text/javascript" src="./js/fastclick.js"></script>
+    	<script src="./js/airtable.browser.js"></script>
+
+		<script type="text/javascript" src="./js/controller.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<!-- solutions screen -->
+			<div id="solutions" style="opacity: 1;">
+			</div>
+
+			<!-- question screen -->
+			<div id="questions" class="white-bc uppercase">
+				<div id="questions-container">
+				</div>
+				<div class="nav-bar">
+					<div id="nav-prev" class="button nav-button nav-button-disabled">
+						Previous
+					</div>
+					<div id="nav-next" class="button right nav-button nav-button-disabled">
+						<div id="next-content">
+							Next
+						</div>
+						<div id="submit-pre" class="centered">Submit</div>
+						<div id="submit-content" class="centered">
+							<div class="submit-title">Submit</div>
+							<div class="submit-subtitle">To get your recommendation</div>
+						</div>
+					</div>
+					<div class="cf"></div>
+				</div>
+			</div>
+
+			<!-- Welcome screen -->
+			<div id="welcome" class="centered">
+				<div class="welcome-dark">
+					<div id="welcome-title" class="purple-fg roboto uppercase">Self Assessment</div>
+					<div id="welcome-subtitle" class="grey-fg montserrat">Before we ask you a lot of questions, we&apos;d like to hear from you. Use this simple tool to reflect and let us know a few things about how you&apos;re currently feeling. We&apos;ll start your next appointment listening to you and your responses to make sure we can uniquely care for you. <br><br>
+
+For each question, please select where you fall on the spectrum. At the end you&apos;ll be able to see a summary. 
+</div>
+					<div id="welcome-button" class="button roboto">Take Our Survey</div>
+<!-- 
+					<div id="welcome-confidential" class="white-fg montserrat centered">
+						Your participation is confidential and completely anonymous.
+					</div> -->
+				</div>	
+			</div>
+		</div>
+
+		<!-- templates -->
+		<script type="text/template" id="template-questions">
+			<div id="questions-header">
+				<% for( var i=0; i<questions.length; i++ ){ %>
+				<div class="question-top centered" style="width: <%= 100/questions.length %>%">
+					<div class="question-top-num roboto"><%= i+1 %></div>
+					
+				</div>
+				<% } %>
+				<div class="cf"></div>
+			</div>
+			<div id="questions-scroller">
+				<% for( var i=0; i<questions.length; i++ ){ %>
+				<div class="question slate-purple-fg">
+					<div class="question-begin"><%= questions[i].question %></div>
+					<div class="question-answers roboto">
+						<% if( questions[i].type == 'MULTISELECT') { %>
+
+							<% for( var j=0; j<questions[i].answers.length; j++ ){ %>
+							<div id="answer-<%= i %>-<%= j %>" class="question-answer light-gray-bg centered"><%= questions[i].answers[j] %></div>
+							<% } %>
+							<div class="cf"></div>
+
+
+						<% } %>
+
+						<% if( questions[i].type == 'SLIDER') { %>
+							<div class="sliderimage">
+								<div class="image left"  >
+									<img src="img/<%= questions[i].answer_images[0] %>" alt="">
+								</div>
+								<div class="image center">
+									<img src="img/<%= questions[i].answer_images[1] %>" alt="">
+								</div>
+								<div class="image right" >
+									<img src="img/<%= questions[i].answer_images[2] %>" alt="">
+								</div>
+							</div>
+
+							<div class="slidecontainer">
+							  <input type="range" min="1" max="100" value="50" class="slider"  id="answer-<%= i %>" >
+							</div>
+							<div class="slidelabels">
+								<div class="label left"><%= questions[i].answers[0] %></div>
+								<div class="label center"><%= questions[i].answers[1] %></div>
+								<div class="label right"><%= questions[i].answers[2] %></div>
+							</div>
+
+						<% } %>
+					</div>
+				</div>
+				<% } %>
+				<div class="cf"></div>
+			</div>
+		</script>
+
+		<script type="text/template" id="template-solutions">
+		<div id="solutions-container">
+			<% for( var i=0; i<solutions.length; i++ ){ %>
+
+			<div class="solution" data-solutionid="<%= i %>">
+				<div class="solution-recommended montserrat">
+				Based on your surgery results you are 
+				</div>
+				<div class="solution-container">
+					<div class="solution-title uppercase roboto"><%= solutions[i].title %></div>
+					<div class="solution-subtitle montserrat"><%= solutions[i].description %></div>
+					
+				</div>
+				
+				<div class="cf"></div>
+			</div><!-- solution -->
+			<% } %>
+		</div>
+		
+
+		
+		<div id="delete-csv"></div>
+		<div id="reset-app"></div>
+		</script>
+	</body>
+</html>
