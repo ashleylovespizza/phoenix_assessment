@@ -58,7 +58,31 @@ app.get('/:urlCode', function(req, res) {
 	console.log("nwh_user: "+req.cookies['nwh_user'])
 
 	if (String(req.cookies['nwh_user']) != "undefined") {
-		// cookie is set!  we've been here before, route it normally
+		// cookie is set!  we've been here before...
+
+		// first check if :urlCode is a new url.
+		for (var i in valid_codes ) {
+			if (valid_codes[i]['code'] == req.params.urlCode) {
+				//clear all old cookies 
+				res.clearCookie('nwh_user');
+				res.clearCookie('nwh_userid');
+
+				// put in da new cookie
+				our_id = i;
+				console.log("HELL YEAH setting a cookie. " + valid_codes[i]['name']);
+				codematch = valid_codes[i]['name'];
+
+				// set cookie
+				res.cookie('nwh_user' , codematch);
+
+				// go to /WELCOME yo
+				res.redirect('/');
+
+			}
+		}
+
+
+		// if urlcode is not in our list, and you have a cookie set, proceed as normal!
 		for (i in valid_codes) { 
 			if (valid_codes[i]['id'] == req.cookies['nwh_userid']) { our_id = i; break;}
 		}
@@ -69,6 +93,9 @@ app.get('/:urlCode', function(req, res) {
 
 		res.redirect('/');
 			
+		
+
+
 		
 
 	} else {
