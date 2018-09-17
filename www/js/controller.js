@@ -27,11 +27,6 @@ var controller = (function(){
 			buildSolutions();
 
 
-		// TEMP!!!
-// make solutions visible
-
-		// $("#solutions").fadeTo(500,1);
-		// $(".solution").first().css("display", "block")
 		});
 	}
 
@@ -282,10 +277,7 @@ var controller = (function(){
 	var showSubmit = function(){
 		$("#submit-pre,#next-content").hide();
 
-		$("#nav-next").css({
-			"height": '85px',
-			'line-height': '85px'
-		});
+		
 
 		$("#submit-content").delay(300).fadeIn(250);
 	}

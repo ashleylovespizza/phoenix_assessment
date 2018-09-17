@@ -163,7 +163,7 @@ var main = (function(){
 
 			if (typeof answer == 'number' || typeof answer == 'string') {
 				// slider data
-				if (parseInt(answer) < 34) {
+				if (parseInt(answer) < 34 && parseInt(answer) > 10) {
 					total += 1;
 				} else if (parseInt(answer) > 66) {
 					total += 3;
@@ -172,6 +172,7 @@ var main = (function(){
 				}
 
 				airtableanswer = answer.toString();
+
 			} else {
 				// multiselect
 
@@ -217,20 +218,19 @@ var main = (function(){
 		// over 18, high risk
 		// in between, medium risk
 		// sid = array index of solutions objects in solutions json
-		if(total < 9) {
+		if(total < 14) {
 			sid = 0;
 		}
-		if (total >= 9 && total <= 18 ) {
+		if (total >= 14 && total <= 24 ) {
 			sid = 1;
 		}
-		if (total > 18) {
+		if (total > 24) {
 			sid = 2
 		}
 
-
+		console.log("you had a total of "+total+" and your solution is # "+sid)
 
 		// set header bar link active and show solution
-		$(".solutions-header-title:eq("+sid+")").addClass("solution-selected solution-answer")
 		$(".solution:eq("+sid+") .solution-recommended").show();
 		$(".solution:eq("+sid+")").fadeIn(500);
 		$("#questions").fadeOut();
