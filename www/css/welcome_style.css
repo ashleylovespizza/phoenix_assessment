@@ -416,6 +416,8 @@ line-height: 29px;
 	text-transform: none;
 	margin: 0 auto 80px;
 	border-bottom: white 3px solid;
+	letter-spacing: .5px;
+	font-weight: bold;
 
 }
 .MULTISELECT .question-begin {
@@ -427,9 +429,10 @@ line-height: 29px;
 	}
 	.question-begin {
 			height: 100px;
-		font-size: 16px;
+		font-size: 20px;
 		margin-bottom: 40px;
-		line-height: 24px;
+		line-height: 26px;
+
 padding-right: 11%;
 padding-left: 11%;
 	}

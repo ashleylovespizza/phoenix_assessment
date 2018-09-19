@@ -2,7 +2,7 @@
 	"questions": [
 		{
 			"type": "SLIDER",
-			"question": "When it comes to my upcoming surgery I am feeling",
+			"question": "When it comes to my upcoming surgery, I am feeling",
 			"answers": ["Confident", "Hesitant", "Worried" ],
 			"answer_images": ["01a_Ready", "01b_Hesitant", "01c_Ready"],
 			"key": {
@@ -102,7 +102,7 @@
 		},
 		{
 			"type": "NOTE",
-			"question": "Is there is anything you want to share with your surgical team as they prepare for your procedure?",
+			"question": "Is there anything else you'd like to share with your surgical team as they prepare for your visit?",
 			"answers": ["Confident", "Hesitant", "Worried" ],
 			"answer_images": ["9_confident.svg", "9_ambivalent.svg", "9_hesitant.svg"],
 			"key": {

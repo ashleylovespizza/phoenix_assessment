@@ -708,6 +708,11 @@ footer {
   letter-spacing: 0.05px;
   text-align: center;
   line-height: 20px; }
+  .checklist footer h3,
+  .checklist footer h3 a {
+    margin-bottom:8px;
+    color: #fff;
+  }
   .checklist h3 a {
     color: #2D297C; }
     .checklist h3 a:hover {
