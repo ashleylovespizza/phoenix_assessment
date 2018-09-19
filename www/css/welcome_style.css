@@ -131,23 +131,21 @@ a:hover {
 #welcome-subtitle {
 /* Before we ask you a: */
 font-family: 'Montserrat';
-font-size: 13px;
+font-size: 17px;
 
 color: #9B9B9B;
 letter-spacing: 0.05px;
 text-align: center;
-line-height: 20px;
+line-height: 29px;
 	margin: 47px auto;
 	width: 70%;
 
 }
-@media screen and (max-width: 660px) {
 
 @media screen and (max-width: 660px){
-.welcome-dark { padding-top: 65px; }
-.welcome-dark img { margin-bottom: 18px; }
-#welcome-subtitle { margin: 18px auto; font-size: 11px; }
-}
+	.welcome-dark { padding-top: 65px; }
+	.welcome-dark img { margin-bottom: 18px; }
+	#welcome-subtitle { margin: 18px auto; font-size: 11px; line-height: 20px; }
 
 	#welcome-title {
 		font-size: 30px;
@@ -267,13 +265,13 @@ line-height: 20px;
 .question-top {
 	float: left;
 	font-size: 13px;
-	padding-top: 42px;
+	padding-top: 62px;
 	color: #dcdcdc;
 	transition: color 500ms;
 }
 
 @media screen and (max-width: 660px){
-.question-top { padding-top: 25px;  font-size: 11px; }
+.question-top { padding-top: 30px;  font-size: 11px; }
 }
 .question-top-title { margin-top: 9px; }
 
@@ -311,10 +309,12 @@ line-height: 20px;
 	margin: 0 auto 40px;
 	display: inline-block;
 	color: #2D297C;
+     font-size: 22px;
 }
 
 @media screen and (max-width: 660px){
-	.label { font-size: 12px; }
+	.label { font-size: 12px; 
+     margin-bottom: 25px; }
 }
 .label.left {
 	float: left;
@@ -393,7 +393,7 @@ line-height: 20px;
 .question {
 	float: left;
 	position: relative;
-	top: 16%;
+	top: 4%;
 	/*transform: translateY(-50%);*/
 /*	-webkit-transform: translateY(-50%); */
 }
@@ -401,14 +401,19 @@ line-height: 20px;
 .question-begin {
 /* When it comes to my: */
 font-family: 'Montserrat';
-width: 72%;
+width: 100%;
+padding-right: 14%;
+padding-left: 14%;
+height: 155px;
 font-size: 27px;
 color: #2D297C;
 letter-spacing: 0.05px;
 text-align: center;
 line-height: 34px;
 text-transform: none;
-margin: 0 auto 100px;
+margin: 0 auto 80px;
+     border-bottom: white 3px solid;
+
 }
 .MULTISELECT .question-begin {
 	margin-bottom: 16px;
@@ -418,9 +423,12 @@ margin: 0 auto 100px;
 		top: 3%;
 	}
 	.question-begin {
+			height: 100px;
 		font-size: 16px;
 		margin-bottom: 40px;
 		line-height: 24px;
+padding-right: 11%;
+padding-left: 11%;
 	}
 	.NOTE .question-begin {
 		margin-bottom: 28px;
@@ -480,7 +488,7 @@ margin: 0 auto 100px;
 		.NOTE .question-answer {
 			width: 100%;
 			
-    height: 45%;
+    		height: 45%;
 		}
 @media screen and (max-width: 660px) { 
 
@@ -493,6 +501,7 @@ margin: 0 auto 100px;
 	.NOTE .question-answer {
 		margin: 0;
 		width: 100%;
+		height: 59%;
 	}
 
 }
