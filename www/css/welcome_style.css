@@ -23,7 +23,7 @@ button:focus, .button:focus, a:focus {outline:0;}
 
 .turquoise-bg { background-color: #00D8FF!important; border: 1px #00D8FF solid !important;}
 .purple-fg { color: #2D297C!important; }
-.grey-fg { color: #9B9B9B!important; }
+.grey-fg { color: #6D6D6D!important; }
 .white-bc { border-color: #fff; }
 
 
@@ -133,7 +133,7 @@ a:hover {
 font-family: 'Montserrat';
 font-size: 17px;
 
-color: #9B9B9B;
+color: #6D6D6D;
 letter-spacing: 0.05px;
 text-align: center;
 line-height: 29px;
@@ -145,7 +145,9 @@ line-height: 29px;
 @media screen and (max-width: 660px){
 	.welcome-dark { padding-top: 65px; }
 	.welcome-dark img { margin-bottom: 18px; }
-	#welcome-subtitle { margin: 18px auto; font-size: 11px; line-height: 20px; }
+	#welcome-subtitle { margin: 18px auto; 
+     font-size: 13px;
+    line-height: 23px; }
 
 	#welcome-title {
 		font-size: 30px;
@@ -515,6 +517,10 @@ textarea {
     border: 1px solid #ccc;
     background-color: #ffffff;
     resize: none;
+
+     font-size: 24px;
+    line-height: 33px;
+    color: #000;
 }
 textarea:focus { 
     outline: none !important;
