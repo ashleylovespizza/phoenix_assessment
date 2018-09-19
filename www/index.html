@@ -1,179 +1,246 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>NWH Peace of Mind Assessment</title>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124600368-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-		<meta name="format-detection" content="telephone=no">
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-		
-
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed" rel="stylesheet">
-
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-<!-- 
-		<script src="cordova.js"></script> -->
-
-		<script type="text/javascript" src="./js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="./js/jquery.min.js"></script>
-		<script type="text/javascript" src="./js/underscore.min.js"></script>
-		<script type="text/javascript" src="./js/hammer.js"></script>
-		<script type="text/javascript" src="./js/fastclick.js"></script>
-    	<script src="./js/airtable.browser.js"></script>
-
-		<script type="text/javascript" src="./js/controller.js"></script>
-		<script type="text/javascript" src="./js/main.js"></script>
-	</head>
-	<body>
-		<div id="container">
-			<header>
-				<img src="images/nwh_logo.svg" alt="NWH Peace of Mind" class="logo">
-
-				<a href="/">Restart</a>
-			</header>
-			<!-- solutions screen -->
-			<div id="solutions" style="opacity: 1;">
-			</div>
-
-			<!-- question screen -->
-			<div id="questions" class="white-bc uppercase">
-				<div id="questions-container">
-				</div>
-				<div class="nav-bar">
-					<div id="nav-prev" class="button nav-button nav-button-disabled">
-						Previous
-					</div>
-					<div id="nav-next" class="button right nav-button nav-button-disabled">
-						<div id="next-content">
-							Next
-						</div>
-						<div id="submit-pre" class="centered">Submit</div>
-						<div id="submit-content" class="centered">
-							<div class="submit-title">Done</div>
-							
-						</div>
-					</div>
-					<div class="cf"></div>
-				</div>
-			</div>
-
-			<!-- Welcome screen -->
-			<div id="welcome" class="centered">
-				<div class="welcome-dark">
-					<img src="/images/icons/00_HomeHero.svg" alt="Welcome image of survey"/>
-
-					<div id="welcome-title" class="purple-fg roboto uppercase">Self Assessment</div>
-					<div id="welcome-subtitle" class="grey-fg montserrat">Before we ask you a lot of questions, we’d like to hear from you. Use this simple tool to reflect and let us know a few things about how you’re currently feeling. We’ll start your next appointment listening to you and your responses to make sure we can uniquely care for you. 
-<br><br>
-For each question, please select where you fall on the spectrum. At the end you’ll be able to see a summary. 
-
-</div>
-					<div id="welcome-button" class="button roboto">Take Our Survey</div>
-<!-- 
-					<div id="welcome-confidential" class="white-fg montserrat centered">
-						Your participation is confidential and completely anonymous.
-					</div> -->
-				</div>	
-			</div>
-		</div>
-
-		<!-- templates -->
-		<script type="text/template" id="template-questions">
-			<div id="questions-header">
-				<% for( var i=0; i<questions.length; i++ ){ %>
-				<div class="question-top centered" style="width: <%= 100/questions.length %>%">
-					<div class="question-top-num roboto"><%= i+1 %></div>
-					
-				</div>
-				<% } %>
-				<div class="cf"></div>
-			</div>
-			<div id="questions-scroller">
-				<% for( var i=0; i<questions.length; i++ ){ %>
-				<div class="question slate-purple-fg  <%=questions[i].type%>">
-					<div class="question-begin"><%= questions[i].question %></div>
-					<div class="question-answers roboto">
-						<% if( questions[i].type == 'MULTISELECT') { %>
-
-							<% for( var j=0; j<questions[i].answers.length; j++ ){ %>
-
-							<div id="answer-<%= i %>-<%= j %>" class="question-answer multiselect centered">
-								<img src="images/icons/<%= questions[i].answer_images[j] %>.svg" alt="<%= questions[i].answers[j] %>" class="off">
-
-								<img src="images/icons/<%= questions[i].answer_images[j] %>_hover.svg" alt="<%= questions[i].answers[j] %>" class="on" />
-
-								<span><%= questions[i].answers[j] %></span>
-							</div>
-							<% } %>
-							<div class="cf"></div>
+  gtag('config', 'UA-124600368-1');
+</script>
 
 
-						<% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-						<% if( questions[i].type == 'SLIDER') { %>
-							<div class="sliderimage">
-								<div class="image left"  >
-									<img src="images/icons/<%= questions[i].answer_images[0] %>.svg" alt="">
-								</div>
-								<div class="image center visible">
-									<img src="images/icons/<%= questions[i].answer_images[1] %>.svg" alt="">
-								</div>
-								<div class="image right" >
-									<img src="images/icons/<%= questions[i].answer_images[2] %>.svg" alt="">
-								</div>
-							</div>
-<div class="slidelabels">
-								<div class="label left"><%= questions[i].answers[0] %></div>
-								<div class="label center"><%= questions[i].answers[1] %></div>
-								<div class="label right"><%= questions[i].answers[2] %></div>
-							</div>
-							<div class="slidecontainer">
-							  <input type="range" min="1" max="100" value="50" class="rangeslider"  id="answer-<%= i %>" >
-							</div>
-							
-
-						<% } %>
-
-						<% if( questions[i].type == 'NOTE') { %>
-
-							<div id="answer-<%= i %>" class="question-answer note centered">
-								<textarea id="note"></textarea>
-							</div>
-							<div class="cf"></div>
+    <meta property="og:title" content="NWH Peace of Mind Digital Tool" />
+    <meta property="og:image" content="https://www.nwhpeaceofmind.org/images/hello.svg" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
 
 
-						<% } %>
+    <script src="/js/hammer.js"></script>
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery.hammer.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/airtable.browser.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/main.js"></script>
 
-					</div>
-				</div>
-				<% } %>
-				<div class="cf"></div>
-			</div>
-		</script>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat:300,400,600,700" rel="stylesheet">
 
-		<script type="text/template" id="template-solutions">
-		<div id="solutions-container">
-			<% for( var i=0; i<solutions.length; i++ ){ %>
+    <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
 
-			<div class="solution" data-solutionid="<%= i %>">
-				<div class="solution-recommended montserrat">
-				Based on your surgery results you are 
-				</div>
-				<div class="solution-container">
-					<div class="solution-title uppercase roboto"><%= solutions[i].title %></div>
-					<div class="solution-subtitle montserrat"><%= solutions[i].description %></div>
-					
-				</div>
-				
-				<div class="cf"></div>
-			</div><!-- solution -->
-			<% } %>
-		</div>
-		
+<body class="home">
 
-		
-		<div id="delete-csv"></div>
-		<div id="reset-app"></div>
-		</script>
-	</body>
+    <nav id="navbar" class="navbar">
+      <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="https://www.nwhpeaceofmind.org">
+                <span class="is-invisible">NWH Peace of Mind</span>
+                  <img src="/images/nwh_peace_of_mind_logo.svg" alt="Newton Wellesley Hospital Peace of Mind" width="134" height="18">
+            </a>
+
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuDocumentation">
+              <span></span>
+              <span></span>
+              <span></span>
+              <div>MENU</div>
+          </div>
+      </div>
+
+      <div id="navMenuDocumentation" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item bd-navbar-item-documentation  is-active" href="/home">
+           
+            <span>
+                  Home
+            </span>
+          </a>
+
+
+          <a class="navbar-item bd-navbar-item-videos " href="/journey">
+            
+            <span>Your Journey</span>
+          </a>
+
+          <a class="navbar-item bd-navbar-item-blog " href="/team">
+           
+            <span>Your Team</span>
+          </a>
+
+          <a class="navbar-item bd-navbar-item-expo " href="/checklist">
+           
+            <span>Your Checklist</span>
+          </a>
+
+        </div>
+      
+    </nav>
+
+
+
+
+
+<section class="section">
+    <div class="container has-ecru-background">
+
+      <div class="columns">
+
+        <div class="column is-hidden-mobile 
+"></div>
+        <div class="column is-three-fifths ">
+          
+          <div class="bubble-container">
+
+          <div class="bubble">
+            <h1 class="title">
+              Hello
+              <span id="name"></span>
+            </h1>
+          </div>
+
+        </div>
+        </div>
+        
+        <div class="column is-hidden-mobile 
+"></div>
+
+      </div>
+
+
+      <div class="columns is-mobile surgeonData">
+
+        <div class="column  is-hidden-mobile 
+"></div>
+        <div class="column is-one-half-mobile is-one-half-tablet is-one-fifth-desktop is-one-fifth-widescreen is-one-fifth-fullhd " id="surgeonPhoto">
+
+          <img class="is-invisible" src="/images/team/7_Surgeon.png" alt="Your Doctor"/>
+        </div>
+        <div class="column  is-one-half-mobile is-one-half-tablet is-two-fifths-desktop is-two-fifths-widescreen is-two-fifths-fullhd has-text-left  ">
+      
+      <p class="purple strong has-text-left ">
+        <strong class="purple block">Your surgery date is:</strong>
+     
+        <span id="surgeryDate"></span>
+      </p>
+
+      <p class="purple has-text-left  ">
+        <strong class="purple block">Your doctor is:</strong>
+        <span class="surgeonName"></span>
+      </p>
+
+        </div>
+        
+        <div class="column  is-hidden-mobile "></div>
+
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="columns is-tablet">
+        <div class="column">
+          
+          <a class="link-card card blue" href="/journey">
+            <div class="columns is-mobile">
+              <div class="column is-two-fifths has-text-centered">
+                <img src="/images/yourjourney_circle_icon.svg" alt="Icon of a person walking"/>
+              </div>
+              <div class=" column is-three-fifths has-text-left">
+                <h2 class="is-uppercase">Your Journey</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="column">
+          
+          <a class="link-card card green" href="/team">
+            <div class="columns is-mobile">
+              <div class="column is-two-fifths has-text-centered">
+                <img src="/images/yourteam_circle_icon.svg" alt="Icon of a medical team"/>
+              </div>
+              <div class=" column is-three-fifths has-text-left">
+                <h2 class="is-uppercase">Your Team</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="column">
+          
+          <a class="link-card card purple" href="/checklist">
+            <div class="columns is-mobile">
+              <div class="column is-two-fifths has-text-centered">
+                <img src="/images/yourchecklist_circle_icon.svg" alt="Icon of a checklist"/>
+              </div>
+              <div class=" column is-three-fifths has-text-left">
+                <h2 class="is-uppercase">Your Checklist</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+</section>
+
+    <footer class="has-purple-background">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-hidden-mobile"></div>
+          <div class="column is-two-thirds has-text-centered">
+            <h3>
+              CONTACT THE OFFICE OF <span class="surgeonName">YOUR DOCTOR</span> FOR ADDITIONAL QUESTIONS
+            </h3>
+            <h3 class="phone pink">
+    <a href="" class="surgeonPhone"></a>
+            </h3>
+          </div>
+          <div class="column is-hidden-mobile"></div>
+        </div>
+      </div>
+
+    </footer>
+
+</body>
+
+<script>
+
+var Airtable = require('airtable');
+var base = new Airtable({ apiKey: 'keypea3CJfSCwG8tn' }).base('appur6EvjZzuIGG3Q');
+
+
+$(document).ready(function() {
+  $("#name").html(Cookies.get("nwh_user")+"!");
+
+  var nwh_userid = Cookies.get('nwh_userid')
+  base('Users').find(nwh_userid, function(err, record) {
+      if (err) { console.error(err); return; }
+        var surgeryDate = record['fields']['Surgery Date'];
+      
+          var realdate = moment.utc(surgeryDate);
+          console.log(realdate + typeof realdate);
+          console.log(realdate.format());
+
+
+          $("#surgeryDate").html(realdate.format('dddd MMMM Do')+' <br>('+realdate.fromNow() + ')');
+
+  });
+
+});
+
+
+// get user's surgeon info and cookie it!
+
+</script>
+
+
 </html>

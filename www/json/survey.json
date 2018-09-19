@@ -1,6 +1,27 @@
 {
 	"questions": [
-
+		{
+			"type": "SLIDER",
+			"question": "When it comes to my upcoming surgery I am feeling",
+			"answers": ["Confident", "Hesitant", "Worried" ],
+			"answer_images": ["01a_Ready", "01b_Hesitant", "01c_Ready"],
+			"key": {
+				"A": [0,0,2,0],
+				"B": [0,0,1,0],
+				"C": [0,0,-1,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"The number of questions I have floating in my head",
+			"answers": ["Zero", "A few", "Many"],
+			"answer_images": ["02a_sero", "02b_afew", "02c_many"],
+			"key": {
+				"A": [2,2,0,0],
+				"B": [1,1,0,0],
+				"C": [-2,-2,0,0]
+			}
+		},
 		{
 			"type": "MULTISELECT",
 			"question":"My questions are mostly about…",
@@ -10,6 +31,73 @@
 				"A": [0,2,0,0],
 				"B": [0,-1,0,0],
 				"C": [0,1,0,0]
+			}
+		},
+		{
+			"type": "MULTISELECT",
+			"question":"There are some other things on my mind too, including",
+			"answers": ["Parking & Transportation", "Organizing Family Care", "Missing Work/<br>Returning to normal activities", "None of the above" ],
+			"answer_images": ["04a_parking", "04b_family", "04c_work", "04e_none"],
+			"key": {
+				"A": [0,2,0,0],
+				"B": [1,1,0,0],
+				"C": [1,0,1,1],
+				"D": [1,0,2,2]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"Do you know who to contact if you have a question?",
+			"answers": ["Yes", "Not Sure", "No" ],
+			"answer_images": ["05a_yes", "05b_notsure", "05c_no"],
+			"key": {
+				"A": [1,1,1,1],
+				"B": [0,0,1,0],
+				"C": [0,0,1,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"When it comes to my upcoming surgery I am feeling",
+			"answers": ["Calm", "Uneasy", "Overwhelmed" ],
+			"answer_images": ["06a_calm", "06b_uneasy", "06c_overwhelmed"],
+			"key": {
+				"A": [1,1,1,1],
+				"B": [0,0,1,0],
+				"C": [0,0,1,0]
+			}
+		},
+		{
+			"type": "MULTISELECT",
+			"question": "The best way for me to receive information is",
+			"answers": ["Verbally", "Digitally", "On Paper" ],
+			"answer_images": ["07a_verbally", "07b_digitally", "07c_paper"],
+			"key": {
+				"A": [4,0,0,0],
+				"B": [0,0,0,0],
+				"C": [0,0,0,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"When it comes to having surgery at Newton-Wellesley Hospital, my familiarity is",
+			"answers": ["High", "Medium", "Low" ],
+			"answer_images": ["08a_high", "08b_medium", "08c_low"],
+			"key": {
+				"A": [4,0,0,0],
+				"B": [0,0,0,0],
+				"C": [0,0,0,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"Based on my past experiences, healthcare settings make me feel ",
+			"answers": ["Confident", "Hesitant", "Worried" ],
+			"answer_images": ["09a_confident", "09b_hesitant", "09c_worried"],
+			"key": {
+				"A": [4,0,0,0],
+				"B": [0,0,0,0],
+				"C": [0,0,0,0]
 			}
 		},
 		{

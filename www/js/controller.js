@@ -164,6 +164,7 @@ var controller = (function(){
 
 
 			} else {
+				console.log("write down in answers: ", _q, _a)
 				// you are selecting
 				$(this).addClass("selected");
 				$(this).addClass(question_answer_active);
@@ -186,7 +187,7 @@ var controller = (function(){
 
 			}
 
-			answers[_q][_a];
+			//answers[_q][_a];
 
 			console.log("question " + _q + ", " + answers[_q] + " selected");
 			console.log(answers);
@@ -345,9 +346,6 @@ var controller = (function(){
 
 		var rec = main.computeAnswer(content,answers);
 
-		//main.recordAnswers(answers,rec);
-		
-		console.log("recommended approach: " + content.solutions[rec].title);
 	}
 
 	var getContent = function(){ return content; }

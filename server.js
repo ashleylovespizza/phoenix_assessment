@@ -91,11 +91,28 @@ app.get('/:urlCode', function(req, res) {
 		console.log("welcome back kotter");
 		console.log(req.params)
 
-		res.redirect('/');
-			
-		
 
-
+		if (req.cookies['nwh_pem_welcome'] != 'true') {
+				res.sendFile(path.join(__dirname + '/www/welcome.html'));
+		} else {
+			switch(req.params.urlCode) {
+				
+			    case "welcome":
+					res.sendFile(path.join(__dirname + '/www/welcome.html'));
+			        break;
+			    case "team":
+			        res.sendFile(path.join(__dirname + '/www/team.html'));
+			        break;
+			    case "journey":
+			        res.sendFile(path.join(__dirname + '/www/journey.html'));
+			        break;
+			    case "checklist":
+			        res.sendFile(path.join(__dirname + '/www/checklist.html'));
+			        break;
+			    default:
+			        res.redirect('/');
+			}
+		}
 		
 
 	} else {
@@ -115,7 +132,7 @@ app.get('/:urlCode', function(req, res) {
 				res.cookie('nwh_user' , codematch);
 
 				// go to /WELCOME yo
-				res.redirect('/');
+				res.redirect('/welcome');
 
 			}
 		}
@@ -135,16 +152,19 @@ app.get('/', function(req, res) {
 	console.log(req.params)
 
 	if (String(req.cookies['nwh_user']) != "undefined") {
-		console.log("we have a cookie set")
-			res.sendFile(path.join(__dirname + '/www/index.html'));
+		if (String(req.cookies['nwh_pem_welcome']) != "true") {
+
+				res.redirect('/welcome');
+			res.sendFile(path.join(__dirname + '/dist/welcome.html'));
+		} else {
+
+			res.sendFile(path.join(__dirname + '/dist/index.html'));
+		}
 	} else {
 
-		console.log("NO COOKIE")
-		res.sendFile(path.join(__dirname + '/www/sorry.html'));
+		res.sendFile(path.join(__dirname + '/dist/sorry.html'));
 	}
 })
-
-
 
 
 
