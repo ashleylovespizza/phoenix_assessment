@@ -369,11 +369,13 @@ line-height: 29px;
     width: 55px;
     height: 55px;
     border-radius: 50%; 
+    border: none;
     background: #00D8FF;
     cursor: pointer;
 }
 
 .rangeslider::-moz-range-thumb {
+    border: none;
     width: 55px;
     height: 55px;
     border-radius: 50%;
