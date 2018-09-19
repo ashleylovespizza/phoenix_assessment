@@ -326,10 +326,13 @@ line-height: 20px;
 }
 .sliderimage {
 	margin-bottom: 75px;
+	height: 160px;
 }
 .sliderimage .image {
 	display: none;
+	height: 100%;
 }
+.sliderimage img { height: 100%; }
 .sliderimage .image.visible {
 	display: block;
 }
@@ -436,12 +439,16 @@ margin: 0 auto 100px;
 		color: #2D297C;
 		font-size: 18px;
 		width: 150px;
-		height: 165px;
+		height: 178px;
 		transition: background-color 300ms, color 100ms;
 	}
 		.question-answer img {
 			width: 100%;
 			margin-bottom: 4px;
+		}
+		.question-answer.multiselect span {
+			display: block;
+			padding-top: 12px;
 		}
 		/* by default, multiselect is not selected */
 		.question-answer.multiselect img.off, 

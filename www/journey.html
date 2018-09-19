@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124600368-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124600368-1');
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="NWH Peace of Mind Digital Tool" />
+    <meta property="og:image" content="http://assessment.nwhpeaceofmind.org/images/hello.svg" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+
+
+    <script src="/js/hammer.js"></script>
+
+    <script type="text/javascript" src="/js/bulma-accordion.js"></script>
+
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery.hammer.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+       <script src="/js/airtable.browser.js"></script>
+       <script src="/js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat:300,400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bulma.accordion.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+
+
+
+
+<body class="journey inner">
+
+
+    <nav id="navbar" class="navbar">
+      <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="http://assessment.nwhpeaceofmind.org">
+                <span class="is-invisible">NWH Peace of Mind</span>
+                  <img src="/images/nwh_peace_of_mind_logo.svg" alt="Newton Wellesley Hospital Peace of Mind" width="134" height="18">
+            </a>
+
+
+
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuDocumentation">
+              <span></span>
+              <span></span>
+              <span></span>
+              <div>MENU</div>
+          </div>
+      </div>
+
+      <div id="navMenuDocumentation" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item bd-navbar-item-documentation " href="/home">
+            <span>
+                  Home
+            </span>
+          </a>
+          <a class="navbar-item bd-navbar-item-videos  is-active" href="/journey">
+            <span>Your Journey</span>
+          </a>
+          <a class="navbar-item bd-navbar-item-blog " href="/team">
+            <span>Your Team</span>
+          </a>
+          <a class="navbar-item bd-navbar-item-expo " href="/checklist">
+            <span>Your Checklist</span>
+          </a>
+        </div>
+    </nav>
+
+    <div id="lightbox" class="off">
+      <div class="close"></div>
+      <div class="my-image" style="background-image:url(/images/journey/photos/5_Gettingtothehospital.jpg);"></div>
+
+    </div>
+
+    <div class="main container">
+      <div class="columns">
+        <div class="column is-mobile">
+          <div class="title-card card blue journey">
+            <h2>Your Journey</h2>
+
+            <p class="purple">There’s a lot to navigate when it comes to surgery. Learn the steps in the process, where you’ll be, and how to get there. </p>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div class="container">
+    
+
+
+<section class="accordions">
+
+  <article class="accordion is-active yellow">
+    <div class="accordion-header toggle">
+       <a class="card">
+        <div class="circle"></div>
+        <h3>Weeks before surgery</h3>
+
+      </a>
+    </div>
+
+    <div class="accordion-body">
+      <div class="accordion-content">
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="registration"></i> STEP 1: REGISTRATION CALL
+            </h3>
+            <p>A phone call about two weeks before your scheduled surgery to confirm your personal details and insurance. 
+            </p>
+
+
+
+          </div>
+        </div><!-- /.step -->
+       
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="testing"></i> STEP 2: PRE-PROCEDURE EVALUATION
+            </h3>
+            <p>An appointment by phone or in-person in advance of surgery to make sure you are medically set to safely have surgery and receive anesthesia. 
+            </p>
+
+
+          </div>
+        </div><!-- /.step -->
+
+       
+
+
+      </div>
+    </div>
+  </article>
+
+  <article class="accordion green">
+    <div class="accordion-header toggle">
+        <a class="card">
+        <div class="circle"></div>
+        <h3>Week of surgery</h3>
+
+      </a>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-content">
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="plan"></i> STEP 3: MAKING A PLAN
+            </h3>
+            <p>The week before surgery is a good time to finalize your day of surgery plan. Use <a href="/checklist">our checklist</a> to keep track of things to do like fill prescriptions, buy groceries and other medical supplies, and coordinate transportation to return home from the hospital.
+
+            </p>
+
+          </div>
+        </div><!-- /.step -->
+
+
+      </div>
+    </div>
+  </article>
+
+
+  <article class="accordion pink">
+    <div class="accordion-header toggle">
+        <a class="card">
+        <div class="circle"></div>
+        <h3>Day before surgery</h3>
+
+      </a>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-content">
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="preparing"></i> STEP 4: PREPARING YOURSELF AND YOUR RECOVERY SPACE
+            </h3>
+            <p>You may have received specific guidelines from the hospital and your surgeon that you’ll need to follow in order to make sure your care team can operate safely, including dietary restrictions and instructions.
+
+            </p>
+
+          </div>
+        </div><!-- /.step -->
+
+
+      </div>
+    </div>
+  </article>
+
+
+
+
+  <article class="accordion blue is-clearfix">
+    <div class="accordion-header toggle">
+        <a class="card">
+        <div class="circle"></div>
+        <h3>Day of surgery</h3>
+
+      </a>
+    </div>
+    <div class="accordion-body is-clearfix">
+      <div class="accordion-content">
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="gettingthere"></i> STEP 5: GETTING TO THE HOSPITAL
+
+            </h3>
+
+            <img class="photo" src="/images/journey/photos/5_Gettingtothehospital.jpg" alt="Outside of Newton Wellesley Hospital"/>
+
+            <p>We admit it’s not always easy to find your way to or around our hospital, especially if you’ve never been here before. But here are a few tips and pictures to make it easier: 
+
+            </p>
+              <ul>
+                <li>Enter the hospital campus towards the East Entrance at the traffic signal. Follow signs up the hill towards the Surgical Center (address for GPS: 2000 Washington Street, Newton, MA 02462)</li>
+
+                <li>
+                   We highly recommend using our valet parking at the East Entrance! It's $9 per day and makes your checkout simpler. If you prefer parking yourself, the valet can point you towards the garage entrance. 
+                </li>
+              </ul>
+
+
+          </div>
+        </div><!-- /.step -->
+
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="checkin"></i> STEP 6: CHECKING IN
+
+            </h3>
+
+            <img class="photo" src="/images/journey/photos/6_checkingin.jpg" alt="Registration desk at East Lobby of NWH"/>
+            
+
+            <p>As you walk through the East Entrance you’ll see our registration team straight ahead. Look for EAST LOBBY printed above the desk. They’ll get you checked in by confirming a few details like your name and date of birth. 
+            </p>
+            
+          </div>
+        </div><!-- /.step -->
+
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="getready"></i> STEP 7: GETTING READY FOR SURGERY
+
+            </h3>
+
+            <img class="photo" src="/images/journey/photos/7_Gettingready.jpg" alt="Bed in the pre-operative area of the hospital"  data-hires="/images/journey/photos/7_Gettingready.jpg"/>
+
+            <p>Next, a member of our care team will escort you and your family/caretakers upstairs to the pre-operative area. We’ll help you get settled, changed, and review the plan for the day. You’ll also spend some time with each member of your care team including your nurse, anesthesia team, and your surgeon. They will meet with you, answer your questions, and make sure you're ready for surgery. Your anesthesia team will administer medication. Your guests are able to remain with you during this step.
+            </p>
+            
+
+          </div>
+        </div><!-- /.step -->
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="or"></i> STEP 8: HEADING TO THE OPERATING ROOM (OR)
+
+            </h3>
+
+            <img class="photo" src="/images/journey/photos/8_HeadingtotheOR.jpg" alt="Bed being wheeled into the Operating Room" data-hires="/images/journey/photos/hires/hires_intotheOR.jpg"/>
+
+            <p>Just before heading into surgery, your surgical team will confirm the details and accompany you to the OR.
+
+            </p>
+            
+          </div>
+        </div><!-- /.step -->
+
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="surgery"></i> STEP 9: YOUR SURGERY
+
+            </h3>
+
+
+            <img class="photo" src="/images/journey/photos/9_Yoursurgery.jpg" alt="Operating Room" data-hires="/images/journey/photos/hires/hires_yoursurgery.jpg"/>
+
+            <p>With the help of anesthesia, your surgery will be over before you know it. While you’re in surgery, your family/caretakers are welcome to wait in the Surgical Center lobby (right near the registration desk). A Surgical Liaison is available in the East Lobby to provide updates on your progress and will contact your family/caretakers once the surgery is completed. They may be reached at <a href="tel:617-243-5274">617-243-5274</a>.
+            </p>
+            
+          </div>
+        </div><!-- /.step -->
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="wake"></i> STEP 10: WAKING UP
+
+            </h3>
+
+
+            <img class="photo" src="/images/journey/photos/10_wakingup.jpg" alt="Post Anesthesia Recovery Room beds" data-hires="/images/journey/photos/hires/hires_wakingup.jpg"/>
+
+
+            <p>The next thing you’ll probably remember is waking up in the Recovery Room (also known as the PACU, or Post Anesthesia Care Unit). While your surgeon and anesthesiologist will help you settle in after surgery, you may not remember them being there. Your surgeon will reach out to your family/caretakers to let them know you’re awake and recovering. Your post-operative nurse will be there throughout, helping you transition from surgery. The last step before going home is a short stay at the Day Surgery area.
+
+            </p>
+            
+          </div>
+        </div><!-- /.step -->
+
+
+        <div class="step is-clearfix">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="almosthome"></i> STEP 11: GETTING READY TO GO HOME
+
+            </h3>
+
+            <img class="photo" src="/images/journey/photos/11_goinghome.jpg" alt="Photo of the Surgical Center Liaison stand in the East Lobby" data-hires="/images/journey/photos/hires/hires_goinghome.jpg"/>
+
+            <p>As you start to feel like yourself again, your family/caretakers are welcome to join you, and will be called up by the Surgical Liaison. Your nurse will help you and your family/caregiver go over all instructions for recovery.  
+
+
+            </p>
+            
+          </div>
+        </div><!-- /.step -->
+
+
+        <div class="step is-clearfix last">
+          <div class="timeline"> <div class="circle"></div> </div>
+          <div class="bubble has-text-left">
+            <h3><i class="depart"></i> STEP 12: DEPARTURE
+
+            </h3>
+
+            
+            <img class="photo" src="/images/journey/photos/12_departure.jpg" alt="Photo of the outside of NWH where valet parking is" data-hires="/images/journey/photos/hires/hires_departure.jpg"/>
+
+            <p>To help make it easy, we’ll coordinate with the valet or a family member/caretaker to ensure that your ride is ready to go when you are. A member of our team will escort you back down to our lobby and we will follow up with you the next day to check-in on your healing.
+            </p>
+            
+          </div>
+        </div><!-- /.step -->
+
+
+
+
+
+      </div>
+    </div>
+  </article>
+
+</section>
+
+
+
+    </div>
+
+<script>
+
+var Airtable = require('airtable');
+var base = new Airtable({ apiKey: 'keypea3CJfSCwG8tn' }).base('appur6EvjZzuIGG3Q');
+
+$(document).ready(function() {
+
+var userid = (Cookies.get("nwh_userid"));
+var name = Cookies.get("nwh_user");
+
+  var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+
+
+  $(".accordion-header").click(function(e) {
+  
+    $(this).toggleClass("active-accordion-inside");
+    var h3 = $(this).find('h3').first().html();
+
+    var hasClass = Number($(this).hasClass("active-accordion-inside"))
+
+      gtag('event', 'view_item_list', {
+        'items': h3
+      });
+
+      base('UsersSiteInteractions').create({
+          "Name":  name,
+          "User ID": userid,
+          "Path": "Journey-Accordion-Click",
+          "Content Value": h3,
+          "Interaction": hasClass
+      }, function(err, record) {
+      })
+  });
+
+  // photo lightbox
+  $(".photo").click(function(e){
+    e.preventDefault();
+
+    if ($(this).attr("data-hires")) {
+      var newphoto = $(this).attr("data-hires");
+    } else {
+      var newphoto = $(this).attr("src");
+    }
+
+    $("#lightbox .my-image").css('background-image', 'url('+newphoto+')');
+    $("#lightbox").removeClass("off");
+    $("#lightbox").addClass("on");
+
+      gtag('event', 'view_item', {
+        'items': newphoto
+      });
+
+      base('UsersSiteInteractions').create({
+          "Name":  name,
+          "User ID": userid,
+          "Path": "Journey-Image-Open",
+          "Content Value": newphoto,
+          "Interaction": 1,
+      }, function(err, record) {
+      })
+
+
+  })
+
+  $("#lightbox").click(function(e){ 
+    console.log("wat")
+    $("#lightbox").removeClass("on");
+    $("#lightbox").addClass("off");
+  })
+  // escape out of lightbox
+  $(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+       
+    $("#lightbox").removeClass("on");
+    $("#lightbox").addClass("off");
+    }
+  });
+});
+</script>
+
+  </body>
+
+</html>

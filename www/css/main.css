@@ -258,6 +258,7 @@ footer {
     text-transform: uppercase; }
     footer h3 span {
       color: white; }
+      footer h5 { color: white; }
   footer .container .is-two-thirds {
     border: 4px white solid;
     padding: 30px; }
@@ -769,7 +770,7 @@ footer {
       padding-left: 2rem; } }
 
 .home .bubble {
-  background: url(/images/bluebubble.svg) no-repeat top center;
+  background: url(/images/bluebubble_text.svg) no-repeat top center;
   background-size: contain;
   height: 0;
   padding-top: 60%;
@@ -807,7 +808,10 @@ footer {
     padding-top: 1%;
     font-size: 7vw; }
     .home h1 span {
-      font-size: 13vw; }
+      
+      width: 81%;
+    font-size: 8vw;
+    margin: 8px auto; }
   .home .is-three-fifths h2,
   .home .is-three-fifths p {
     margin: 2rem; } }
@@ -840,7 +844,7 @@ footer {
   margin: 2rem 2rem 0 2rem; }
 
 .welcome .bubble {
-  background: url(/images/bluebubble.svg) no-repeat top center;
+  background: url(/images/bluebubble_text.svg) no-repeat top center;
   background-size: contain;
   height: 0;
   padding-top: 60%;

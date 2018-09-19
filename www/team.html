@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124600368-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124600368-1');
+</script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="NWH Peace of Mind Digital Tool" />
+    <meta property="og:image" content="http://assessment.nwhpeaceofmind.org/images/hello.svg" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+
+
+    <script src="/js/hammer.js"></script>
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery.hammer.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+       <script src="/js/airtable.browser.js"></script>
+       <script src="/js/main.js"></script>
+
+       <script src="/js/team_copy.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat:300,400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+
+
+
+
+<body class="team inner">
+
+
+    <nav id="navbar" class="navbar">
+      <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="http://assessment.nwhpeaceofmind.org">
+                <span class="is-invisible">NWH Peace of Mind</span>
+                  <img src="/images/nwh_peace_of_mind_logo.svg" alt="Newton Wellesley Hospital Peace of Mind" width="134" height="18">
+            </a>
+
+
+
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuDocumentation">
+              <span></span>
+              <span></span>
+              <span></span>
+              <div>MENU</div>
+          </div>
+      </div>
+
+      <div id="navMenuDocumentation" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item bd-navbar-item-documentation " href="/home">
+            <span>
+                  Home
+            </span>
+          </a>
+          <a class="navbar-item bd-navbar-item-videos " href="/journey">
+            <span>Your Journey</span>
+          </a>
+          <a class="navbar-item bd-navbar-item-blog  is-active" href="/team">
+            <span>Your Team</span>
+          </a>
+          <a class="navbar-item bd-navbar-item-expo " href="/checklist">
+            <span>Your Checklist</span>
+          </a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="columns">
+        <div class="column is-mobile">
+          <div class="title-card card green team">
+            <h2>Your Team</h2>
+
+            <p class="purple">Click below to learn about who you’ll meet and what you can count on them for.  </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="team-members">
+        <div class="columns is-multiline is-mobile">
+
+          <div class="column is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member is-active" data-teamname="Registration">
+              <img src="/images/team/1_Registration.png" alt="Registration"/>
+              <h5>Registration</h5>
+            </a>
+          </div>
+
+
+          <div class="column is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="Volunteer">
+              <img src="/images/team/2_volunteer.png" alt="Volunteer"/>
+              <h5>Volunteer</h5>
+            </a>
+          </div>
+
+          <div class="column is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="PCA">
+              <img src="/images/team/3_PCA.png" alt="Patient Care Assistant"/>
+              <h5>Patient Care Assistant</h5>
+            </a>
+          </div>
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="Nurse">
+              <img src="/images/team/4_Nurse.png" alt="Nurse"/>
+              <h5>Nurse</h5>
+            </a>
+          </div>
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="Anesthesiologist">
+              <img src="/images/team/5_Anesth.png" alt="Anesthesiologist"/>
+              <h5>Anesthesiologist</h5>
+            </a>
+          </div>
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="CRNA">
+              <img src="/images/team/6_CRNA.png" alt="Certified Registered Nurse Anesthetist"/>
+              <h5>Certified Registered Nurse Anesthetist</h5>
+            </a>
+          </div>
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="Surgeon">
+              <img src="/images/team/7_Surgeon.png" alt="Surgeon"/>
+              <h5>Surgeon</h5>
+            </a>
+          </div>
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="Fellow">
+              <img src="/images/team/8_Fellow.png" alt="Fellow"/>
+              <h5>Intern / Fellow / Resident</h5>
+            </a>
+          </div>
+
+
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="SST">
+              <img src="/images/team/10_SurgicalSupportTeam.png" alt="Surgical Support Team"/>
+              <h5>Surgical Support Team</h5>
+            </a>
+          </div>
+
+
+          <div class="column  is-one-third-mobile is-one-third-tablet is-one-fifth-desktop">
+            <a class="team-member" data-teamname="Liason">
+              <img src="/images/team/9_Liason.png" alt="Surgical Liason"/>
+              <h5>Surgical Liason</h5>
+            </a>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+    <div id="team-content" data-teamname="Registration" class="container has-ecru-background">
+
+        <div class="columns">
+          <div id="prev" class="buttons">
+<svg viewBox="0 0 100 100"><path fill="#2D297C" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(15,0)"></path></svg>
+          </div>
+          <div id="next" class="buttons">
+            
+            <svg viewBox="0 0 100 100"><path  fill="#2D297C" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(85,100) rotate(180)"></path></svg>
+
+          </div>
+          <div class="column">
+
+
+            <div class="title">
+              <img src="/images/team/1_Registration.png">
+              <h2>Registration</h2>
+            </div>
+            <div id="description">
+              <p>As you walk into the hospital, you’ll be welcomed by a member of our registration staff. Their job is to check you in as quickly as possible and notify your care team that you’ve arrived. They’re also thinking about your post-surgery recovery, helping to make sure you have support and transportation once you’re ready to go home.
+              </p>
+               <p class="pink">
+              You can count on them to provide you with updates from your medical team and help find answers to any questions that you might have.
+              </p>
+            </div>
+
+            <a class="top">BACK TO THE TOP</a>
+          </div>
+        </div>
+    </div>
+  
+
+
+  
+    <footer class="has-purple-background">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-hidden-mobile"></div>
+          <div class="column is-two-thirds has-text-centered">
+            <h3>
+              IF YOU HAVE ANY QUESTIONS, CONTACT OUR SURGICAL COACH
+            </h3>
+            <h5>(MON - FRIDAY 7:30AM - 3:30PM)</h5>
+            <h3 class="phone pink">
+    <a href="617-219-1500" class="surgeonPhone">617-219-1500</a>
+            </h3>
+          </div>
+          <div class="column is-hidden-mobile"></div>
+        </div>
+      </div>
+
+    </footer>
+
+
+<script>
+
+var Airtable = require('airtable');
+var base = new Airtable({ apiKey: 'keypea3CJfSCwG8tn' }).base('appur6EvjZzuIGG3Q');
+
+$(document).ready(function() {
+var userid = (Cookies.get("nwh_userid"));
+var name = Cookies.get("nwh_user");
+
+   $(".team-member").click(function(e) {
+      e.preventDefault();
+      var memberyouwant = $(this).attr('data-teamname');
+      var newdesc = alldata[memberyouwant];
+      $("#description").html(newdesc);
+
+      var newh2 = $(this).children('h5').first().html();
+      $("#team-content h2").html(newh2)
+
+      var newimgsrc = $(this).children('img').first().attr('src');
+      $("#team-content img").attr("src", newimgsrc);
+
+      $("#team-content").attr("data-teamname", memberyouwant);
+       $('body,html').animate({
+         scrollTop: $('#team-content').offset().top - 50
+       }, 500 );
+
+
+      base('UsersSiteInteractions').create({
+          "Name":  name,
+          "User ID": userid,
+          "Path": "Team-Member-Click",
+          "Content Value": $(this).attr('data-teamname')
+      }, function(err, record) {
+      })
+
+   })
+
+   $("a.top").click(function(e){
+    e.preventDefault;
+
+      $('body,html').animate({
+        scrollTop: $('#team-members').offset().top -60
+      }, 300 );
+
+   })
+
+
+var next = function( key) {
+  for (var i = 0; i < alldataarr.length; i++) {
+    if (alldataarr[i] == key) {
+      
+      if (i == alldataarr.length-1) {
+        return alldataarr[0];
+      } else {
+        return alldataarr[i+1]
+      }
+    }
+  }
+};
+var prev = function( key) {
+  for (var i = 0; i < alldataarr.length; i++) {
+    if (alldataarr[i] === key) {
+      if(i == 0) {
+        return alldataarr[alldataarr.length-1];
+      } else {
+        return alldataarr[i - 1];
+      }
+    }
+  }
+};
+
+
+  function switchTeamMember(nextOrPrev) {
+      var currentMemberKey = $("#team-content").attr('data-teamname')
+      var memberyouwant;
+      if(nextOrPrev) {
+        // next
+        memberyouwant = next(currentMemberKey);
+      } else {
+        memberyouwant = prev(currentMemberKey);
+      }
+      console.log(currentMemberKey);
+      console.log(memberyouwant);
+
+      var newdesc = alldata[memberyouwant];
+      $("#description").html(newdesc);
+
+      var newh2 = $('a.team-member[data-teamname='+memberyouwant+']').children('h5').first().html();
+      $("#team-content h2").html(newh2)
+
+      var newimgsrc = $('a.team-member[data-teamname='+memberyouwant+']').children('img').first().attr('src');
+      $("#team-content img").attr("src", newimgsrc);
+
+      $("#team-content").attr("data-teamname", memberyouwant);
+       // $('body,html').animate({
+       //   scrollTop: $('#team-content').offset().top - 50
+       // }, 500 );
+      $('a.team-member').removeClass('is-active')
+       $('a.team-member[data-teamname='+memberyouwant+']').addClass(
+        "is-active");
+  }
+
+   $("#prev").click(function(e) {
+    switchTeamMember(0);
+   })
+   $("#next").click(function(e) {
+    switchTeamMember(1);
+   });
+// mobile swipe
+  $("#team-content").hammer().bind("swipeleft", function(evt) {
+    switchTeamMember(1);
+  });
+    $("#team-content").hammer().bind("swiperight", function(evt) {
+    switchTeamMember(0);
+  });
+  
+});
+</script>
+
+  </body>
+</html>

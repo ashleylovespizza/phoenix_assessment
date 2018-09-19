@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4_Checklist" transform="translate(-178.000000, -512.000000)">
+            <g id="Group-2" transform="translate(159.000000, 512.000000)">
+                <g id="Group" transform="translate(19.000000, 0.000000)">
+                    <circle id="Oval" fill="#00D8FF" cx="10" cy="10" r="10"></circle>
+                    <path d="M16.1764706,13.5294118 C16.1764706,14.0164706 15.7811765,14.4117647 15.2941176,14.4117647 L4.70588235,14.4117647 C4.21882353,14.4117647 3.82352941,14.0164706 3.82352941,13.5294118 L3.82352941,7.05882353 C3.82352941,6.57117647 4.21882353,6.17647059 4.70588235,6.17647059 L15.2941176,6.17647059 C15.7811765,6.17647059 16.1764706,6.57117647 16.1764706,7.05882353 L16.1764706,13.5294118 Z" id="Stroke-1" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <polyline id="Stroke-3" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="15.8823529 6.47058824 10 11.1764706 4.11764706 6.47058824"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

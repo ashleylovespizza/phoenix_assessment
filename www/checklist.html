@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124600368-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124600368-1');
+</script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="NWH Peace of Mind Digital Tool" />
+    <meta property="og:image" content="http://assessment.nwhpeaceofmind.org/images/hello.svg" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+
+
+    <script src="/js/hammer.js"></script>
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery.hammer.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+       <script src="/js/airtable.browser.js"></script>
+       <script src="/js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat:300,400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+
+
+
+
+<body class="checklist inner">
+
+
+
+    <nav id="navbar" class="navbar">
+      <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="http://assessment.nwhpeaceofmind.org">
+                <span class="is-invisible">NWH Peace of Mind</span>
+                  <img src="/images/nwh_peace_of_mind_logo.svg" alt="Newton Wellesley Hospital Peace of Mind" width="134" height="18">
+            </a>
+
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuDocumentation">
+              <span></span>
+              <span></span>
+              <span></span>
+              <div>MENU</div>
+          </div>
+      </div>
+
+      <div id="navMenuDocumentation" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item bd-navbar-item-documentation" href="/home">
+           
+            <span>
+                  Home
+            </span>
+          </a>
+
+
+          <a class="navbar-item bd-navbar-item-videos " href="/journey">
+            
+            <span>Your Journey</span>
+          </a>
+
+          <a class="navbar-item bd-navbar-item-blog " href="/team">
+           
+            <span>Your Team</span>
+          </a>
+
+          <a class="navbar-item bd-navbar-item-expo is-active " href="/checklist">
+           
+            <span>Your Checklist</span>
+          </a>
+
+        </div>
+      
+    </nav>
+
+
+    <div class="container">
+      <div class="columns">
+        <div class="column is-mobile">
+          <div class="title-card card purple checklist">
+            <h2>Your Checklist</h2>
+
+            <p class="purple">You’ve got a lot to remember before surgery. Let us help make it easier for you to take care of the small things.  </p>
+
+            <h3>
+              <a class="checklist-download" download href="/files/NWH_Checklist.pdf">Download Checklist</a>
+            </h3>
+            <p class="subtitle">(.PDF, 39K)</p>
+           
+           <a class="checklist-download" download href="/files/NWH_Checklist.pdf">
+              <img src="/images/Checklist_Icon.png" alt="icon of checklist"/>
+            </a>
+
+          <div class="email">
+              <div class="email_icon">
+                <svg width="40px" height="40px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="email" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="4_Checklist" transform="translate(-178.000000, -512.000000)">
+                            <g id="Group-2" transform="translate(159.000000, 512.000000)">
+                                <g id="Group" transform="translate(19.000000, 0.000000)">
+                                    <circle id="Oval" fill="#00D8FF" cx="10" cy="10" r="10"></circle>
+                                    <path d="M16.1764706,13.5294118 C16.1764706,14.0164706 15.7811765,14.4117647 15.2941176,14.4117647 L4.70588235,14.4117647 C4.21882353,14.4117647 3.82352941,14.0164706 3.82352941,13.5294118 L3.82352941,7.05882353 C3.82352941,6.57117647 4.21882353,6.17647059 4.70588235,6.17647059 L15.2941176,6.17647059 C15.7811765,6.17647059 16.1764706,6.57117647 16.1764706,7.05882353 L16.1764706,13.5294118 Z" id="Stroke-1" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <polyline id="Stroke-3" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="15.8823529 6.47058824 10 11.1764706 4.11764706 6.47058824"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+              </div>
+
+
+              <form>
+
+              <h3>Email the Checklist to Yourself or your family/caretaker</h3><br>
+
+                <div class="field has-text-left ">
+                <label class="label">Enter the email address you want to send the Checklist PDF to:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter here">
+                </div>
+                <p id="err" class="is-invisible">Please enter a valid email address</p>
+              </div>
+              <div class="field is-grouped">
+                  <button class="button is-link" id="submit">Submit</button>
+              </div>
+            </form>
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+<script>
+
+var Airtable = require('airtable');
+var base = new Airtable({ apiKey: 'keypea3CJfSCwG8tn' }).base('appur6EvjZzuIGG3Q');
+
+$(document).ready(function() {
+  
+var userid = (Cookies.get("nwh_userid"));
+var name = Cookies.get("nwh_user");
+
+  $(".checklist-download").click(function(e){
+      gtag('event', 'selectContent', {
+        'items': 'checklist_download'
+      });
+
+      base('UsersSiteInteractions').create({
+          "Name":  name,
+          "User ID": userid,
+          "Path": "Checklist-Download",
+          "Interaction": 1,
+      }, function(err, record) {
+      })
+  })
+  
+
+
+
+  $("#submit").click(function(e){
+    e.preventDefault();
+
+    var to_email = $('form input').val();
+
+
+      gtag('event', 'share', {
+        'items': 'checklist_share'
+      });
+
+      base('UsersSiteInteractions').create({
+          "Name":  name,
+          "User ID": userid,
+          "Path": "Checklist-Email",
+          "Content Value": to_email,
+          "Interaction": 1,
+      }, function(err, record) {
+      })
+
+    if( /(.+)@(.+){2,}\.(.+){2,}/.test(to_email) ){
+  // valid email
+
+    window.location.replace("http://assessment.nwhpeaceofmind.org/mail/"+to_email);
+
+} else {
+  // invalid email
+  $("form input").val('');
+  $("#err").removeClass("is-invisible")
+}
+
+  });
+
+});
+</script>
+
+
+    <footer class="has-purple-background">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-hidden-mobile"></div>
+          <div class="column is-two-thirds has-text-centered">
+            <h3>
+              IF YOU HAVE ANY QUESTIONS, CONTACT OUR SURGICAL COACH
+            </h3>
+            <h5>(MON - FRIDAY 7:30AM - 3:30PM)</h5>
+            <h3 class="phone pink">
+    <a href="617-219-1500" class="surgeonPhone">617-219-1500</a>
+            </h3>
+          </div>
+          <div class="column is-hidden-mobile"></div>
+        </div>
+      </div>
+
+    </footer>
+
+    
+  </body>
+</html>
