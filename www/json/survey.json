@@ -26,7 +26,7 @@
 			"type": "MULTISELECT",
 			"question":"My questions are mostly about…",
 			"answers": ["The surgery itself", "Receiving Anesthesia", "My recovery", "None of the above" ],
-			"answer_images": ["03a_Successful", "03b_anesthesia", "03c_recovery", "03d_none"],
+			"answer_images": ["03a_Successful", "03b_anesthesia", "03c_recovery", "none"],
 			"key": {
 				"A": [0,2,0,0],
 				"B": [0,-1,0,0],
@@ -37,7 +37,7 @@
 			"type": "MULTISELECT",
 			"question":"There are some other things on my mind too, including",
 			"answers": ["Parking & Transportation", "Organizing Family Care", "Missing Work/<br>Returning to normal activities", "None of the above" ],
-			"answer_images": ["04a_parking", "04b_family", "04c_work", "04e_none"],
+			"answer_images": ["04a_parking", "04b_family", "04c_work", "none"],
 			"key": {
 				"A": [0,2,0,0],
 				"B": [1,1,0,0],
