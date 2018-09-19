@@ -9,7 +9,7 @@ var controller = (function(){
 	var template_solutions = null;
 
 	var question_title_active = "slate-blue-fg";
-	var question_answer_active = "turquoise-bg white-fg";
+	var question_answer_active = "definitely";
 
 	var answers = [];
 
@@ -82,7 +82,34 @@ var controller = (function(){
 		// setup callback for seleting an answer
 
 		/// FOR SLIDER
-		$('.slider').on("change", function() {
+		/// on mouse move listener to update image
+		$('.rangeslider').on("input", function () {
+
+			var left = $(this).parent().prev().prev().children('.left')
+			var right = $(this).parent().prev().prev().children('.right')
+
+		    if($(this).val() < 34) {
+		    	// make .image.left visible
+		    	if (!left.hasClass('visible')) {
+					$(this).parent().prev().prev().children('.image').removeClass('visible');
+					left.addClass('visible');
+		    	}
+		    } else if($(this).val() > 66) {
+		    	// make .image.right visible
+		    	if (!right.hasClass('visible')) {
+					$(this).parent().prev().prev().children('.image').removeClass('visible');
+					right.addClass('visible');
+		    	}
+		    } else {
+		    	// make .image.center visible
+		    	if (right.hasClass('visible') || left.hasClass('visible')) {
+					$(this).parent().prev().prev().children('.image').removeClass('visible');
+					
+					$(this).parent().prev().prev().children('.center').addClass('visible');
+		    	}
+		    }
+		})
+		$('.rangeslider').on("change", function() {
 			var _q = parseInt($(this).attr('id').split("answer-")[1]);
 			var _a = $(this).val();
 		
@@ -93,25 +120,22 @@ var controller = (function(){
 			// remove nav-button-disabled from next
 			$("#nav-next").removeClass("nav-button-disabled");
 
-			// if clicked final question, show submit button
-			if( _q == content.questions.length-1 ){
-				showSubmit();
-			}
+			// // if clicked final question, show submit button
+			// if( _q == content.questions.length-1 ){
+			// 	showSubmit();
+			// }
 		});
 
 		/// FOR MULTISELECT
-		$(".question-answer").click(function(){
+		$(".question-answer.multiselect").click(function(){
 			var data = $(this).attr('id').split("answer-")[1].split('-');
 			var _q = parseInt(data[0]);
 			var _a = parseInt(data[1]);
-
-
 
 			if ( $(this).hasClass("selected")) {
 				// you are deselecting
 
 				$(this).removeClass("selected");
-				answers[_q][_a] = false;
 				$(this).removeClass(question_answer_active);
 
 				// if none are now selected make next disabled
@@ -126,25 +150,39 @@ var controller = (function(){
 					$("#nav-next").removeClass("nav-button-disabled");
 				}
 
-				// if clicked final question, show submit button
-				if( _q == content.questions.length-1 ){
-					showSubmit();
+
+				// not none o the above
+				console.log($(this).children('span').html() );
+				if( $(this).children('span').html() != "None of the above") {
+					answers[_q][_a] = false;
 				}
+
+				// // if clicked final question, show submit button
+				// if( _q == content.questions.length-1 ){
+				// 	showSubmit();
+				// }
 
 
 			} else {
 				// you are selecting
 				$(this).addClass("selected");
-				answers[_q][_a] = true;
 				$(this).addClass(question_answer_active);
 
 				// must be disabled if any are selected
 				$("#nav-next").removeClass("nav-button-disabled");
 
-				// if clicked final question, show submit button
-				if( _q == content.questions.length-1 ){
-					showSubmit();
+				// not none o the above
+				console.log($(this).children('span').html() );
+				if($(this).children('span').html() != "None of the above") {
+
+					answers[_q][_a] = true;
 				}
+
+
+				// // if clicked final question, show submit button
+				// if( _q == content.questions.length-1 ){
+				// 	showSubmit();
+				// }
 
 			}
 
@@ -154,6 +192,7 @@ var controller = (function(){
 			console.log(answers);
 
 		});
+
 	}
 
 	var buildSolutions = function(){
@@ -228,6 +267,9 @@ var controller = (function(){
 
 	// next question
 	var next = function(){
+		if( cur_slide == content.questions.length-2 ){
+			showSubmit();
+		}
 		// if on last slide and we've selected answer
 		if( cur_slide == content.questions.length-1 ){
 			if(answers[cur_slide] !== undefined){
@@ -278,7 +320,8 @@ var controller = (function(){
 		$("#submit-pre,#next-content").hide();
 
 		
-
+		console.log("showing submit")
+		$("#nav-next").removeClass("nav-button-disabled")
 		$("#submit-content").delay(300).fadeIn(250);
 	}
 
@@ -302,7 +345,7 @@ var controller = (function(){
 
 		var rec = main.computeAnswer(content,answers);
 
-		main.recordAnswers(answers,rec);
+		//main.recordAnswers(answers,rec);
 		
 		console.log("recommended approach: " + content.solutions[rec].title);
 	}

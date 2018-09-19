@@ -14,6 +14,7 @@
 <!-- 
 		<script src="cordova.js"></script> -->
 
+		<script type="text/javascript" src="./js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.min.js"></script>
 		<script type="text/javascript" src="./js/hammer.js"></script>
@@ -26,7 +27,7 @@
 	<body>
 		<div id="container">
 			<header>
-				<img src="img/nwh_logo.svg" alt="NWH Peace of Mind" class="logo">
+				<img src="images/nwh_logo.svg" alt="NWH Peace of Mind" class="logo">
 
 				<a href="/">Restart</a>
 			</header>
@@ -59,10 +60,13 @@
 			<!-- Welcome screen -->
 			<div id="welcome" class="centered">
 				<div class="welcome-dark">
-					<div id="welcome-title" class="purple-fg roboto uppercase">Self Assessment</div>
-					<div id="welcome-subtitle" class="grey-fg montserrat">Before we ask you a lot of questions, we&apos;d like to hear from you. Use this simple tool to reflect and let us know a few things about how you&apos;re currently feeling. We&apos;ll start your next appointment listening to you and your responses to make sure we can uniquely care for you. <br><br>
+					<img src="/images/icons/00_HomeHero.svg" alt="Welcome image of survey"/>
 
-For each question, please select where you fall on the spectrum. At the end you&apos;ll be able to see a summary. 
+					<div id="welcome-title" class="purple-fg roboto uppercase">Self Assessment</div>
+					<div id="welcome-subtitle" class="grey-fg montserrat">Before we ask you a lot of questions, we’d like to hear from you. Use this simple tool to reflect and let us know a few things about how you’re currently feeling. We’ll start your next appointment listening to you and your responses to make sure we can uniquely care for you. 
+<br><br>
+For each question, please select where you fall on the spectrum. At the end you’ll be able to see a summary. 
+
 </div>
 					<div id="welcome-button" class="button roboto">Take Our Survey</div>
 <!-- 
@@ -86,13 +90,20 @@ For each question, please select where you fall on the spectrum. At the end you&
 			</div>
 			<div id="questions-scroller">
 				<% for( var i=0; i<questions.length; i++ ){ %>
-				<div class="question slate-purple-fg">
+				<div class="question slate-purple-fg  <%=questions[i].type%>">
 					<div class="question-begin"><%= questions[i].question %></div>
 					<div class="question-answers roboto">
 						<% if( questions[i].type == 'MULTISELECT') { %>
 
 							<% for( var j=0; j<questions[i].answers.length; j++ ){ %>
-							<div id="answer-<%= i %>-<%= j %>" class="question-answer light-gray-bg centered"><%= questions[i].answers[j] %></div>
+
+							<div id="answer-<%= i %>-<%= j %>" class="question-answer multiselect centered">
+								<img src="images/icons/<%= questions[i].answer_images[j] %>.svg" alt="<%= questions[i].answers[j] %>" class="off">
+
+								<img src="images/icons/<%= questions[i].answer_images[j] %>_hover.svg" alt="<%= questions[i].answers[j] %>" class="on" />
+
+								<span><%= questions[i].answers[j] %></span>
+							</div>
 							<% } %>
 							<div class="cf"></div>
 
@@ -102,26 +113,37 @@ For each question, please select where you fall on the spectrum. At the end you&
 						<% if( questions[i].type == 'SLIDER') { %>
 							<div class="sliderimage">
 								<div class="image left"  >
-									<img src="img/<%= questions[i].answer_images[0] %>" alt="">
+									<img src="images/icons/<%= questions[i].answer_images[0] %>.svg" alt="">
 								</div>
-								<div class="image center">
-									<img src="img/<%= questions[i].answer_images[1] %>" alt="">
+								<div class="image center visible">
+									<img src="images/icons/<%= questions[i].answer_images[1] %>.svg" alt="">
 								</div>
 								<div class="image right" >
-									<img src="img/<%= questions[i].answer_images[2] %>" alt="">
+									<img src="images/icons/<%= questions[i].answer_images[2] %>.svg" alt="">
 								</div>
 							</div>
-
-							<div class="slidecontainer">
-							  <input type="range" min="1" max="100" value="50" class="slider"  id="answer-<%= i %>" >
-							</div>
-							<div class="slidelabels">
+<div class="slidelabels">
 								<div class="label left"><%= questions[i].answers[0] %></div>
 								<div class="label center"><%= questions[i].answers[1] %></div>
 								<div class="label right"><%= questions[i].answers[2] %></div>
 							</div>
+							<div class="slidecontainer">
+							  <input type="range" min="1" max="100" value="50" class="rangeslider"  id="answer-<%= i %>" >
+							</div>
+							
 
 						<% } %>
+
+						<% if( questions[i].type == 'NOTE') { %>
+
+							<div id="answer-<%= i %>" class="question-answer note centered">
+								<textarea id="note"></textarea>
+							</div>
+							<div class="cf"></div>
+
+
+						<% } %>
+
 					</div>
 				</div>
 				<% } %>

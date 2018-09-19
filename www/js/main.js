@@ -2,11 +2,15 @@ var main = (function(){
 	var that = {};
 	var Airtable = require('airtable');
 // create Airtable base
-			var airbase = new Airtable({apiKey: 'keypea3CJfSCwG8tn'}).base('appaxRpnZsU05O1t1');
-
-
-
+	var airbase = new Airtable({apiKey: 'keypea3CJfSCwG8tn'}).base('appaxRpnZsU05O1t1');
 	var anim_speed = 500;
+
+	function hasTouch() {
+	    return 'ontouchstart' in document.documentElement
+	           || navigator.maxTouchPoints > 0
+	           || navigator.msMaxTouchPoints > 0;
+	}
+
 
 	// app ready
 	var onDeviceReady = function(){
@@ -23,7 +27,26 @@ var main = (function(){
 		}
 
 		$(function(){
-			
+
+
+			if (hasTouch()) { // remove all :hover stylesheets
+			    try { // prevent exception on browsers not supporting DOM styleSheets properly
+			        for (var si in document.styleSheets) {
+			            var styleSheet = document.styleSheets[si];
+			            if (!styleSheet.rules) continue;
+
+			            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+			                if (!styleSheet.rules[ri].selectorText) continue;
+
+			                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+			                    styleSheet.deleteRule(ri);
+			                }
+			            }
+			        }
+			    } catch (ex) {}
+			}
+
+
 			// callback for clicking Start on welcome screen
 			$("#welcome-button").click(function(){
 				$("#welcome").fadeTo(anim_speed,0, function(){
@@ -152,13 +175,21 @@ var main = (function(){
 
 	// tally answers and figure out the most appropriate product
 	var computeAnswer = function(content,answers){
+		// put final textarea thing in
+		//console.log(answers);
+		answers.push($("#note").val());
+		
+		
+
 
 		// TODO - submit all final answers to airtable
 
-
+		var name = Cookies.get("nwh_user");
 		var total = 0;
 		for(var i=0; i<answers.length; i++){
+			console.log("i: ",i);
 			var answer = answers[i];
+			console.log(answers);
 			var airtableanswer;
 
 			if (typeof answer == 'number' || typeof answer == 'string') {
@@ -176,14 +207,11 @@ var main = (function(){
 			} else {
 				// multiselect
 
-				// SCORING... todo :P
-				// just use the highest one
-				if (answer[2] != false ) {
-					total += 3;
-				} else if(answer[1] != false) {
-					total += 2;
-				} else { 
-					total +=1;
+				// SCORING... 
+				// add up all options selected cumulatively
+				// none of the above should not be added to answer array in first place
+				for (i in answer) {
+					if ( answer[i] != false) { total++; }
 				}
 
 				airtableanswer = [];
@@ -196,13 +224,15 @@ var main = (function(){
 				}
 				airtableanswer = airtableanswer.toString();
 			}
+
 			
 			console.log("load up in airtable "+airtableanswer)
 			// put it in airtable
-			// TODO_ name :P
+			
+    		var airbase_i = i+1;
 			airbase('Users_SubmittedData').create({
-			  "Name": "Unnamed",
-			  "QuestionNumber": i,
+			  "Name": name,
+			  "QuestionNumber": airbase_i,
 			  "Answer": airtableanswer
 			}, function(err, record) {
 			    if (err) { console.error(err); return; }
@@ -211,13 +241,23 @@ var main = (function(){
 
 		}
 
-		// var sid = totals.indexOf( _.max(totals) );
+			airbase('Users_SubmittedTotals').create({
+			  "Name": name,
+			  "Total": total
+			}, function(err, record) {
+			    if (err) { console.error(err); return; }
+			    console.log(record.getId());
+			});
+
+		/************ 
+		************* taking out for now, because instead we just want to route to BVS
 
 		// 9 questions, total of 27 possible points
 		// under 9, low risk
 		// over 18, high risk
 		// in between, medium risk
 		// sid = array index of solutions objects in solutions json
+
 		if(total < 14) {
 			sid = 0;
 		}
@@ -236,12 +276,24 @@ var main = (function(){
 		$("#questions").fadeOut();
 		$("#solutions").fadeTo(500,1);
 		return sid;
+
+
+		****************/
+		// set header bar link active and show solution
+		$(".solution .solution-recommended").show();
+		$(".solution").fadeIn(500);
+		$("#questions").fadeOut();
+		$("#solutions").fadeTo(500,1);
+		setTimeout(function(){
+			// redirect to BVS URL
+			window.location.href = "http://assessment.nwhpeaceofmind.org/";
+		})
 	}
 
 	// 
 	// public interface
 	//
-	that.recordAnswers = recordAnswers;
+	//that.recordAnswers = recordAnswers;
 	that.computeAnswer = computeAnswer;
 	that.onDeviceReady = onDeviceReady;
 	that.deleteCSV = deleteCSV;

@@ -1,32 +1,11 @@
 {
 	"questions": [
-		{
-			"type": "SLIDER",
-			"question": "When it comes to my upcoming surgery I am feeling",
-			"answers": ["Ready", "Hesitant", "Worried" ],
-			"answer_images": ["3_surgery.svg", "3_anesthesia", "3_recovery"],
-			"key": {
-				"A": [0,0,2,0],
-				"B": [0,0,1,0],
-				"C": [0,0,-1,0]
-			}
-		},
-		{
-			"type": "SLIDER",
-			"question":"The number of questions I have floating in my head",
-			"answers": ["Many", "A Few", "Zero"],
-			"answer_images": ["3_surgery.svg", "3_anesthesia", "3_recovery"],
-			"key": {
-				"A": [2,2,0,0],
-				"B": [1,1,0,0],
-				"C": [-2,-2,0,0]
-			}
-		},
+
 		{
 			"type": "MULTISELECT",
 			"question":"My questions are mostly about…",
-			"answers": ["SURGERY BEING SUCCESSFUL", "RECEIVING ANESTHESIA", "MY RECOVERY" ],
-			"answer_images": ["3_surgery.svg", "3_anesthesia", "3_recovery"],
+			"answers": ["The surgery itself", "Receiving Anesthesia", "My recovery", "None of the above" ],
+			"answer_images": ["03a_Successful", "03b_anesthesia", "03c_recovery", "03d_none"],
 			"key": {
 				"A": [0,2,0,0],
 				"B": [0,-1,0,0],
@@ -34,65 +13,9 @@
 			}
 		},
 		{
-			"type": "MULTISELECT",
-			"question":"There are some other things on my mind too, including",
-			"answers": ["Parking &amp; Transportation", "Organizing Childcare", "Missing Work", "Coming Back Home After Surgery" ],
-			"answer_images": ["4_parking.svg", "4_childcare.svg", "4_work.svg", "4_backhome.svg"],
-			"key": {
-				"A": [0,2,0,0],
-				"B": [1,1,0,0],
-				"C": [1,0,1,1],
-				"D": [1,0,2,2]
-			}
-		},
-		{
-			"type": "SLIDER",
-			"question":"When it comes to my upcoming surgery I am feeling",
-			"answers": ["Easy", "OK", "Overwhelming" ],
-			"answer_images": ["5_easy.svg", "5_ok.svg", "5_overwhelming.svg"],
-			"key": {
-				"A": [1,1,1,1],
-				"B": [0,0,1,0],
-				"C": [0,0,1,0]
-			}
-		},
-		{
-			"type": "SLIDER",
-			"question":"The path to get questions answered from my surgical team seems very",
-			"answers": ["Clear", "Somewhat Clear", "Confusing" ],
-			"answer_images": ["6_clear.svg", "6_somewhat.svg", "6_confusing.svg"],
-			"key": {
-				"A": [4,0,0,0],
-				"B": [0,0,0,0],
-				"C": [0,0,0,0]
-			}
-		},
-		{
-			"type": "MULTISELECT",
-			"question":"The best way for me to receive information is...",
-			"answers": ["Verbally", "Digitally", "On Paper" ],
-			"answer_images": ["7_verbal.svg", "7_digital.svg", "7_paper.svg"],
-			"key": {
-				"A": [4,0,0,0],
-				"B": [0,0,0,0],
-				"C": [0,0,0,0]
-			}
-		},
-		{
-			"type": "SLIDER",
-			"question":"When it comes to the hospital and day of surgery process, what is your level of familiarity?",
-			"answers": ["Frequent Flier", "", "First Timer" ],
-			"answer_images": ["8_frequent.svg", "", "8_firsttime.svg"],
-			"key": {
-				"A": [4,0,0,0],
-				"B": [0,0,0,0],
-				"C": [0,0,0,0]
-			}
-		},
-		{
-			"type": "SLIDER",
-			"question":"Based on my past experiences, healthcare settings make me feel ",
-			"answers": ["Confident", "Ambivalent", "Hesitant" ],
+			"type": "NOTE",
+			"question": "Is there is anything you want to share with your surgical team as they prepare for your procedure?",
+			"answers": ["Confident", "Hesitant", "Worried" ],
 			"answer_images": ["9_confident.svg", "9_ambivalent.svg", "9_hesitant.svg"],
 			"key": {
 				"A": [4,0,0,0],
