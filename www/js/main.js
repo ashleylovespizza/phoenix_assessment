@@ -37,7 +37,8 @@ $(document).ready(function() {
     })
 
 
-
+/*********
+don't need for this version
 
     // surgeon data
     // see if we need the surgeon cookies but don't have them
@@ -69,5 +70,5 @@ $(document).ready(function() {
           $("#surgeonPhoto img").removeClass("is-invisible")
     $(".surgeonPhone").html(Cookies.get("surgeonPhone"));
     $(".surgeonPhone").attr("href", "tel:"+Cookies.get("surgeonPhone"));
-
+*********/
 });

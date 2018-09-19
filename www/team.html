@@ -256,7 +256,6 @@ var name = Cookies.get("nwh_user");
 
       base('UsersSiteInteractions').create({
           "Name":  name,
-          "User ID": userid,
           "Path": "Team-Member-Click",
           "Content Value": $(this).attr('data-teamname')
       }, function(err, record) {
