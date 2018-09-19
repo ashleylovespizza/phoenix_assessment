@@ -155,14 +155,14 @@ app.get('/', function(req, res) {
 		if (String(req.cookies['nwh_pem_welcome']) != "true") {
 
 				res.redirect('/welcome');
-			res.sendFile(path.join(__dirname + '/dist/welcome.html'));
+			res.sendFile(path.join(__dirname + '/www/welcome.html'));
 		} else {
 
-			res.sendFile(path.join(__dirname + '/dist/index.html'));
+			res.sendFile(path.join(__dirname + '/www/index.html'));
 		}
 	} else {
 
-		res.sendFile(path.join(__dirname + '/dist/sorry.html'));
+		res.sendFile(path.join(__dirname + '/www/sorry.html'));
 	}
 })
 
