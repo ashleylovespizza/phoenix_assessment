@@ -30,7 +30,7 @@ button:focus, .button:focus, a:focus {outline:0;}
 
 .slate-blue-bc { border-color: #374952; }
 .slate-blue-bg { background-color: #374952; }
-.slate-blue-fg { color: #374952!important; }
+.slate-blue-fg { color: #2D297C!important; }
 
 .slate-purple-fg { color: #3b333e; }
 .slate-purple-bg { background-color: #3b333e; }
@@ -301,7 +301,7 @@ line-height: 29px;
 
 .slidecontainer {
 	width: 100%;
-	max-width: 500px;
+
 
      margin: 0 auto;
 }

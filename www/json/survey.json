@@ -80,7 +80,7 @@
 		},
 		{
 			"type": "SLIDER",
-			"question":"When it comes to having surgery at Newton-Wellesley Hospital, my familiarity is",
+			"question":"My familiarity having surgery at Newton-Wellesley hospital is",
 			"answers": ["High", "Medium", "Low" ],
 			"answer_images": ["08a_high", "08b_medium", "08c_low"],
 			"key": {
@@ -102,7 +102,7 @@
 		},
 		{
 			"type": "NOTE",
-			"question": "Is there anything else you'd like to share with your surgical team as they prepare for your visit?",
+			"question": "Is there anything else you'd like to share with your surgical team before your visit?",
 			"answers": ["Confident", "Hesitant", "Worried" ],
 			"answer_images": ["9_confident.svg", "9_ambivalent.svg", "9_hesitant.svg"],
 			"key": {
