@@ -339,10 +339,11 @@ line-height: 29px;
 
 @media screen and (max-width: 480px){
 	.sliderimage .image { height: 72px; }
-	.sliderimage { margin-bottom: 36px; }
+	.sliderimage { margin-bottom: 36px; 
+     height: 78px;}
 	.sliderimage img { height: 100%; }
 }
-@media screen and (max-width: 660px){
+@media screen and (min-width: 481px and max-width: 660px){
 	.sliderimage .image { height: 130px; }
 	.sliderimage { margin-bottom: 25px; }
 	.sliderimage img { height: 100%; }

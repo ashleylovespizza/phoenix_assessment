@@ -293,7 +293,7 @@ var main = (function(){
 		
 		setTimeout(function(){
 			// redirect to BVS URL
-			window.location.href = "https://assessment.nwhpeaceofmind.org/";
+			window.location.href = "https://survey.nwhpeaceofmind.org/";
 		}, 3900);
 	}
 
