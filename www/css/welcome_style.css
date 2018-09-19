@@ -399,20 +399,20 @@ line-height: 29px;
 }
 
 .question-begin {
-/* When it comes to my: */
-font-family: 'Montserrat';
-width: 100%;
-padding-right: 14%;
-padding-left: 14%;
-height: 155px;
-font-size: 27px;
-color: #2D297C;
-letter-spacing: 0.05px;
-text-align: center;
-line-height: 34px;
-text-transform: none;
-margin: 0 auto 80px;
-     border-bottom: white 3px solid;
+	/* When it comes to my: */
+	font-family: 'Montserrat';
+	width: 100%;
+	padding-right: 14%;
+	padding-left: 14%;
+	height: 155px;
+	font-size: 27px;
+	color: #2D297C;
+	letter-spacing: 0.05px;
+	text-align: center;
+	line-height: 34px;
+	text-transform: none;
+	margin: 0 auto 80px;
+	border-bottom: white 3px solid;
 
 }
 .MULTISELECT .question-begin {
@@ -461,7 +461,7 @@ padding-left: 11%;
 		}
 		.question-answer.multiselect span {
 			display: block;
-			padding-top: 12px;
+			padding-top: 4px;
 		}
 		/* by default, multiselect is not selected */
 		.question-answer.multiselect img.off, 
@@ -494,8 +494,8 @@ padding-left: 11%;
 
 	.question-answer {
 		width: 76px;
-		height: 102px;
-		margin: 7px;
+		height: 106px;
+		margin: 8px;
 		font-size: 11px;
 	}
 	.NOTE .question-answer {
