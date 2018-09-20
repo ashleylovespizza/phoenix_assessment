@@ -2,7 +2,7 @@
 	"questions": [
 		{
 			"type": "SLIDER",
-			"question": "When it comes to my upcoming surgery I am feeling",
+			"question": "When it comes to my upcoming surgery, I am feeling",
 			"answers": ["Confident", "Hesitant", "Worried" ],
 			"answer_images": ["01a_Ready", "01b_Hesitant", "01c_Ready"],
 			"key": {
@@ -26,7 +26,7 @@
 			"type": "MULTISELECT",
 			"question":"My questions are mostly about…",
 			"answers": ["The surgery itself", "Receiving Anesthesia", "My recovery", "None of the above" ],
-			"answer_images": ["03a_Successful", "03b_anesthesia", "03c_recovery", "03d_none"],
+			"answer_images": ["03a_Successful", "03b_anesthesia", "03c_recovery", "none"],
 			"key": {
 				"A": [0,2,0,0],
 				"B": [0,-1,0,0],
@@ -37,7 +37,7 @@
 			"type": "MULTISELECT",
 			"question":"There are some other things on my mind too, including",
 			"answers": ["Parking & Transportation", "Organizing Family Care", "Missing Work/<br>Returning to normal activities", "None of the above" ],
-			"answer_images": ["04a_parking", "04b_family", "04c_work", "04e_none"],
+			"answer_images": ["04a_parking", "04b_family", "04c_work", "none"],
 			"key": {
 				"A": [0,2,0,0],
 				"B": [1,1,0,0],
@@ -80,7 +80,7 @@
 		},
 		{
 			"type": "SLIDER",
-			"question":"When it comes to having surgery at Newton-Wellesley Hospital, my familiarity is",
+			"question":"My familiarity having surgery at Newton-Wellesley hospital is",
 			"answers": ["High", "Medium", "Low" ],
 			"answer_images": ["08a_high", "08b_medium", "08c_low"],
 			"key": {
@@ -102,7 +102,7 @@
 		},
 		{
 			"type": "NOTE",
-			"question": "Is there is anything you want to share with your surgical team as they prepare for your procedure?",
+			"question": "Is there anything else you'd like to share with your surgical team before your visit?",
 			"answers": ["Confident", "Hesitant", "Worried" ],
 			"answer_images": ["9_confident.svg", "9_ambivalent.svg", "9_hesitant.svg"],
 			"key": {

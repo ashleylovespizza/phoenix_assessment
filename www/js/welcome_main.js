@@ -177,7 +177,7 @@ var main = (function(){
 	var computeAnswer = function(content,answers){
 		// put final textarea thing in
 		console.log(answers);
-		answers[questions.length-1] = $("#note").val();
+		answers[content.questions.length-1] = $("#note").val();
 
 		// submit all final answers to airtable
 
@@ -209,29 +209,34 @@ var main = (function(){
 				// SCORING... 
 				// add up all options selected cumulatively
 				// none of the above should not be added to answer array in first place
-				for (a in answer) {
-					if ( answer[a] != false) { total++; }
-				}
+				
 
 				airtableanswer = [];
 				// and how the fuck are we storing the answers?
 				for (var j=0; j<answer.length; j++) {
+					//if(!answer[j]) { answer[j] = 'false'}
 					if ( answer[j] ) {
-						if (typeof questions[i] == 'object') {
+					//	debugger;
+						if (typeof content.questions[i] == 'object') {
 							console.log("heyyyy")
 							console.log(content.questions[i])
 							// look up actual answer text
 							airtableanswer.push(content.questions[i].answers[j]);
+
+							if (content.questions[i].answers[j] != "None of the above") {
+								total++;
+							}
 						}
 					}
 				}
-				airtableanswer = airtableanswer.toString();
+				//console.log(airtableanswer)
+				airtableanswer = airtableanswer.toString();;
 			}
 
 			
 			console.log("load up in airtable "+airtableanswer)
 			// put it in airtable
-			
+		
     		var airbase_i = parseInt(i)+1;
 			airbase('Users_SubmittedData').create({
 			  "Name": name,
@@ -243,7 +248,7 @@ var main = (function(){
 			});
 
 		}
-
+//temp
 		airbase('Users_SubmittedTotals').create({
 		  "Name": name,
 		  "Total": total
@@ -291,6 +296,7 @@ var main = (function(){
 		$("#questions").fadeOut();
 		$("#solutions").fadeTo(500,1);
 		
+		//temp
 		setTimeout(function(){
 			// redirect to BVS URL
 			window.location.href = "https://survey.nwhpeaceofmind.org/";

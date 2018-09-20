@@ -153,9 +153,9 @@ var controller = (function(){
 
 				// not none o the above
 				console.log($(this).children('span').html() );
-				if( $(this).children('span').html() != "None of the above") {
-					answers[_q][_a] = false;
-				}
+				// if( $(this).children('span').html() != "None of the above") {
+				 	answers[_q][_a] = false;
+				// }
 
 				// // if clicked final question, show submit button
 				// if( _q == content.questions.length-1 ){
@@ -174,10 +174,10 @@ var controller = (function(){
 
 				// not none o the above
 				console.log($(this).children('span').html() );
-				if($(this).children('span').html() != "None of the above") {
+				//if($(this).children('span').html() != "None of the above") {
 
 					answers[_q][_a] = true;
-				}
+				//}
 
 
 				// // if clicked final question, show submit button
