@@ -1,6 +1,27 @@
 {
 	"questions": [
-		
+		{
+			"type": "SLIDER",
+			"question": "When it comes to my upcoming surgery, I am feeling",
+			"answers": ["Confident", "Hesitant", "Worried" ],
+			"answer_images": ["01a_Ready", "01b_Hesitant", "01c_Ready"],
+			"key": {
+				"A": [0,0,2,0],
+				"B": [0,0,1,0],
+				"C": [0,0,-1,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"The number of questions I have floating in my head",
+			"answers": ["Zero", "A few", "Many"],
+			"answer_images": ["02a_sero", "02b_afew", "02c_many"],
+			"key": {
+				"A": [2,2,0,0],
+				"B": [1,1,0,0],
+				"C": [-2,-2,0,0]
+			}
+		},
 		{
 			"type": "MULTISELECT",
 			"question":"My questions are mostly about…",
@@ -24,7 +45,61 @@
 				"D": [1,0,2,2]
 			}
 		},
-		
+		{
+			"type": "SLIDER",
+			"question":"Do you know who to contact if you have a question?",
+			"answers": ["Yes", "Not Sure", "No" ],
+			"answer_images": ["05a_yes", "05b_notsure", "05c_no"],
+			"key": {
+				"A": [1,1,1,1],
+				"B": [0,0,1,0],
+				"C": [0,0,1,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"When it comes to my upcoming surgery I am feeling",
+			"answers": ["Calm", "Uneasy", "Overwhelmed" ],
+			"answer_images": ["06a_calm", "06b_uneasy", "06c_overwhelmed"],
+			"key": {
+				"A": [1,1,1,1],
+				"B": [0,0,1,0],
+				"C": [0,0,1,0]
+			}
+		},
+		{
+			"type": "MULTISELECT",
+			"question": "The best way for me to receive information is",
+			"answers": ["Verbally", "Digitally", "On Paper" ],
+			"answer_images": ["07a_verbally", "07b_digitally", "07c_paper"],
+			"key": {
+				"A": [4,0,0,0],
+				"B": [0,0,0,0],
+				"C": [0,0,0,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"My familiarity having surgery at Newton-Wellesley hospital is",
+			"answers": ["High", "Medium", "Low" ],
+			"answer_images": ["08a_high", "08b_medium", "08c_low"],
+			"key": {
+				"A": [4,0,0,0],
+				"B": [0,0,0,0],
+				"C": [0,0,0,0]
+			}
+		},
+		{
+			"type": "SLIDER",
+			"question":"Based on my past experiences, healthcare settings make me feel ",
+			"answers": ["Confident", "Hesitant", "Worried" ],
+			"answer_images": ["09a_confident", "09b_hesitant", "09c_worried"],
+			"key": {
+				"A": [4,0,0,0],
+				"B": [0,0,0,0],
+				"C": [0,0,0,0]
+			}
+		},
 		{
 			"type": "NOTE",
 			"question": "Is there anything else you'd like to share with your surgical team before your visit?",
