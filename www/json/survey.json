@@ -58,8 +58,8 @@
 		},
 		{
 			"type": "SLIDER",
-			"question":"Do you know who to contact if you have a question?",
-			"answers": ["Yes", "Not sure", "No" ],
+			"question":"How does it feel to be taking on surgery at this moment in your life?",
+			"answers": ["Calm", "Uneasy", "Overwhelming" ],
 			"answer_images": ["06a_calm", "06b_uneasy", "06c_overwhelmed"],
 			"key": {
 				"A": [1,1,1,1],
