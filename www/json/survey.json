@@ -58,8 +58,8 @@
 		},
 		{
 			"type": "SLIDER",
-			"question":"When it comes to my upcoming surgery I am feeling",
-			"answers": ["Calm", "Uneasy", "Overwhelmed" ],
+			"question":"Do you know who to contact if you have a question?",
+			"answers": ["Yes", "Not sure", "No" ],
 			"answer_images": ["06a_calm", "06b_uneasy", "06c_overwhelmed"],
 			"key": {
 				"A": [1,1,1,1],
