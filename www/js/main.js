@@ -5,7 +5,7 @@ var base = new Airtable({ apiKey: 'keypea3CJfSCwG8tn' }).base('appaxRpnZsU05O1t1
 
 $(document).ready(function() {
 
-    var userid = (Cookies.get("nwh_userid"));
+    // var userid = (Cookies.get("nwh_userid"));
     var name = Cookies.get("nwh_user");
 
     // Check for click events on the navbar burger icon
@@ -18,7 +18,6 @@ $(document).ready(function() {
 
       base('UsersSiteInteractions').create({
           "Name":  name,
-          "User ID": userid,
           "Path": "Nav-Burger-Click",
           "Interaction": Number($(".navbar-menu").hasClass("is-active"))
       }, function(err, record) {
@@ -30,7 +29,6 @@ $(document).ready(function() {
 
       base('UsersSiteInteractions').create({
           "Name":  name,
-          "User ID": userid,
           "Path": "Telephone-Call-Click"
       }, function(err, record) {
       })

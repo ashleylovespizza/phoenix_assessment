@@ -199,21 +199,21 @@ var base = new Airtable({ apiKey: 'keypea3CJfSCwG8tn' }).base('appaxRpnZsU05O1t1
 
 
 $(document).ready(function() {
-  $("#name").html(Cookies.get("nwh_user")+"!");
+ // $("#name").html(Cookies.get("nwh_user")+"!");
 
-  var nwh_userid = Cookies.get('nwh_userid')
-  base('Users').find(nwh_userid, function(err, record) {
-      if (err) { console.error(err); return; }
-        var surgeryDate = record['fields']['Surgery Date'];
+  // var nwh_userid = Cookies.get('nwh_userid')
+  // base('Users').find(nwh_userid, function(err, record) {
+  //     if (err) { console.error(err); return; }
+  //       var surgeryDate = record['fields']['Surgery Date'];
       
-          var realdate = moment.utc(surgeryDate);
-          console.log(realdate + typeof realdate);
-          console.log(realdate.format());
+  //         var realdate = moment.utc(surgeryDate);
+  //         console.log(realdate + typeof realdate);
+  //         console.log(realdate.format());
 
 
-          $("#surgeryDate").html(realdate.format('dddd MMMM Do')+' <br>('+realdate.fromNow() + ')');
+  //         $("#surgeryDate").html(realdate.format('dddd MMMM Do')+' <br>('+realdate.fromNow() + ')');
 
-  });
+  // });
 
 });
 
