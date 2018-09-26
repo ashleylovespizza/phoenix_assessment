@@ -164,11 +164,7 @@ app.get('/', function(req, res) {
 
 		res.sendFile(path.join(__dirname + '/www/sorry.html'));
 	}
-})
-
-
-
-
+});
 
 
 app.use(express.static('www'))
