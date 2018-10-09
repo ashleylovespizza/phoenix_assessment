@@ -81,6 +81,8 @@ app.get('/:urlCode', function(req, res) {
 			}
 		}
 
+		
+
 
 		// if urlcode is not in our list, and you have a cookie set, proceed as normal!
 		for (i in valid_codes) { 
@@ -89,7 +91,6 @@ app.get('/:urlCode', function(req, res) {
 
 		codematch = req.cookies['nwh_user'];
 		console.log("welcome back kotter");
-		console.log(req.params)
 
 
 		// if (req.cookies['nwh_pem_welcome'] != 'true') {
