@@ -92,9 +92,9 @@ app.get('/:urlCode', function(req, res) {
 		console.log(req.params)
 
 
-		if (req.cookies['nwh_pem_welcome'] != 'true') {
-				res.sendFile(path.join(__dirname + '/www/welcome.html'));
-		} else {
+		// if (req.cookies['nwh_pem_welcome'] != 'true') {
+		// 		res.sendFile(path.join(__dirname + '/www/welcome.html'));
+		// } else {
 			switch(req.params.urlCode) {
 				
 			    case "welcome":
@@ -112,7 +112,7 @@ app.get('/:urlCode', function(req, res) {
 			    default:
 			        res.redirect('/');
 			}
-		}
+		//}
 		
 
 	} else {
@@ -131,8 +131,10 @@ app.get('/:urlCode', function(req, res) {
 				// set cookie
 				res.cookie('nwh_user' , codematch);
 
-				// go to /WELCOME yo
-				res.redirect('/welcome');
+				// // go to /WELCOME yo
+				// res.redirect('/welcome');
+				// skip survey
+				res.redirect('/');
 
 			}
 		}
@@ -152,14 +154,14 @@ app.get('/', function(req, res) {
 	console.log(req.params)
 
 	if (String(req.cookies['nwh_user']) != "undefined") {
-		if (String(req.cookies['nwh_pem_welcome']) != "true") {
+		// if (String(req.cookies['nwh_pem_welcome']) != "true") {
 
-				res.redirect('/welcome');
-			res.sendFile(path.join(__dirname + '/www/welcome.html'));
-		} else {
+		// 		res.redirect('/welcome');
+		// 	res.sendFile(path.join(__dirname + '/www/welcome.html'));
+		// } else {
 
 			res.sendFile(path.join(__dirname + '/www/index.html'));
-		}
+		//}
 	} else {
 
 		res.sendFile(path.join(__dirname + '/www/sorry.html'));
